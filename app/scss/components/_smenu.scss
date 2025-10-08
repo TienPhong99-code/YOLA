@@ -1,0 +1,358 @@
+@use "../core/mixin" as *;
+@use "../core/font" as *;
+
+.hd {
+  font-family: "SVN-Circular";
+  --color-link: var(--color-text);
+  --color-link-sub: var(--color-text);
+  --color-sub-mobile: var(--color-txt);
+  --gap: -1.2rem;
+  --gap-item: 1.2rem;
+  --font-size-link: 1.6rem;
+  --font-weight-link: 700;
+  --font-size-link-mobile: 1.8rem;
+  --font-weight-link-mobile: 700;
+  --font-size-sub-mobile: 1.6rem;
+  --font-weight-link-sub: 500;
+  --font-weight-sub-mobile: 400;
+  --gap-item-mobile: 0.8rem;
+}
+.hd-menu {
+  height: 100%;
+}
+.hd-nav {
+  height: 100%;
+  @include max(1200px) {
+    display: none;
+  }
+  .menu {
+    &-nav {
+      height: 100%;
+      > .menu-list {
+        height: 100%;
+        margin: 0 var(--gap);
+        align-items: center;
+        > .menu-item {
+          @include flex;
+          align-items: center;
+          height: 100%;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            @include posi-horizontal;
+            height: 0.2rem;
+            background: var(--color-pri);
+            width: 0;
+            @include transitionRe;
+          }
+          &:hover:not(.dropdown),
+          &:has(.current-menu-item) {
+            &::before {
+              width: calc(100% - var(--gap-item) * 2);
+            }
+          }
+
+          &.dropdown {
+            &:hover {
+              &::before {
+                width: 0;
+              }
+            }
+          }
+
+          &:hover {
+            > a {
+              color: var(--color-pri);
+              i {
+                transform: rotate(180deg);
+              }
+            }
+          }
+
+          > .menu-link {
+            height: 100%;
+            @include flex;
+            align-items: center;
+            color: var(--color-link);
+            padding: 0 var(--gap-item);
+            font-size: var(--font-size-link);
+            font-weight: var(--font-weight-link);
+          }
+
+          &.current_page_item,
+          &.current-menu-item,
+         //  &.current_page_parent,
+          &.current-menu-parent,
+          &.current-post-parent {
+            > a {
+              color: var(--color-pri);
+            }
+            &::before {
+              width: calc(100% - var(--gap-item) * 2);
+            }
+          }
+
+          > .menu-list {
+            transform: translateX(-50%);
+            top: calc(100%);
+          }
+        }
+      }
+    }
+
+    &-list {
+      @include flex;
+      align-items: center;
+    }
+
+    &-item {
+      position: relative;
+      @include transition(0.2s, ease-in-out);
+      &:hover {
+        > .menu-list {
+          @include show;
+          > .menu-item {
+            &.current_page_item,
+            &.current-menu-item {
+              > a {
+                color: var(--color-pri);
+                &::after {
+                  height: 100%;
+                }
+                //  color: $color-pri;
+              }
+            }
+          }
+        }
+      }
+
+      .menu-link,
+      a {
+        @include transition(0.2s, ease-in-out);
+
+        i {
+          @include transition(0.2s, ease-in-out);
+        }
+      }
+
+      > .menu-link,
+      > a {
+        color: var(--color-link);
+        font-weight: var(--font-weight-link);
+        font-size: var(--font-size-link);
+        display: block;
+        > i {
+          display: none;
+          font-weight: 600;
+          margin-left: 0.4rem;
+          font-size: 1.6rem;
+        }
+      }
+
+      &.dropdown {
+        > a {
+          > i {
+            display: block;
+          }
+        }
+      }
+
+      > .menu-list {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        min-width: 23rem;
+        white-space: nowrap;
+        @include flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: var(--color-white);
+        @include transitionRe;
+        @include hidden(-50%, 5px);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 0.3rem 1.2rem 0px;
+        > .menu-item {
+          margin-left: 0;
+          width: 100%;
+          &:not(:last-child) {
+            border-bottom: 0.1rem solid rgb(245, 246, 247);
+          }
+          &:hover {
+            &::after {
+              opacity: 1;
+            }
+
+            > .menu-link,
+            > a {
+              color: var(--color-pri);
+              background: var(--color-bg);
+              &::after {
+                height: 100%;
+              }
+            }
+          }
+
+          > .menu-link,
+          > a {
+            padding: 1rem 1.2rem;
+            @include flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            color: var(--color-link-sub);
+            transition: 0.3s ease-in-out;
+            font-weight: var(--font-weight-link-sub);
+
+            &::after {
+              @include pseudo;
+              @include posi-vertical;
+              height: 0%;
+              background: var(--color-pri);
+              width: 0.2rem;
+              z-index: 1;
+              left: 0;
+              transition: all 0.4s ease-in-out;
+            }
+            > i {
+              transform: rotate(-90deg) translate(5px, 0);
+              margin-top: 0.8rem;
+              font-size: 1rem;
+            }
+          }
+
+          > .menu-list {
+            left: 100%;
+            transform: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  .menu {
+    &-nav {
+      > .menu-list {
+        > .menu-item {
+          &.current_page_item,
+           &.current-menu-item,
+          //  &.current_page_parent,
+          //  &.current-menu-parent,
+           &.current-post-parent {
+            > a {
+              color: var(--color-pri);
+              text-decoration: underline;
+              text-underline-position: below;
+              //   padding-left: 3rem;
+
+              &::after {
+                opacity: 1;
+              }
+            }
+          }
+
+          &:has(.current-menu-item) {
+            > a {
+              color: var(--color-pri);
+            }
+          }
+
+          > a {
+            padding: 1.2rem;
+            @include flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-link);
+            font-size: var(--font-size-link-mobile);
+            font-weight: var(--font-weight-link-mobile);
+            border-bottom: 0.1rem solid rgb(245, 246, 247);
+            position: relative;
+
+            br {
+              display: none;
+            }
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    &-item {
+      &.dropdown {
+        > a {
+          > i {
+            display: flex;
+          }
+        }
+      }
+
+      &.active {
+        > a {
+          > i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      a {
+        position: relative;
+
+        i {
+          width: 3.2rem;
+          height: 3.2rem;
+          @include mid-flex;
+          display: none;
+          @include transitionRe;
+        }
+      }
+
+      > a {
+        @include flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--gap-item-mobile);
+        font-size: var(--font-size-sub-mobile);
+        color: var(--color-sub-mobile);
+        font-weight: var(--font-weight-sub-mobile);
+        transition: 0.3s ease-in-out;
+        @include hover {
+          color: var(--color-pri) !important;
+        }
+      }
+
+      > .menu-list {
+        display: none;
+        margin-left: 1.6rem;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 2rem;
+          bottom: 2rem;
+          left: 0;
+          width: 1px;
+          background-color: rgb(245, 246, 247);
+        }
+
+        > .menu-item {
+          &.current_page_item,
+          &.current-menu-item {
+            > a {
+              color: var(--color-pri);
+            }
+          }
+
+          &:has(.current-menu-item) {
+            > a {
+              color: var(--color-pri);
+            }
+          }
+        }
+      }
+    }
+  }
+}

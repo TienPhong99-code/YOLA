@@ -1,0 +1,262 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-epx'
+
+block container
+   .bnh.bn-eng
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item
+                        .b-img
+                           .h-full
+                              +img("bn-cus-epx.jpg")
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 span.t20.c-white CHƯƠNG TRÌNH TIẾNG ANH CHO BÉ 3-10 TUỔI
+                                 .t-text 
+                                    | KHAI PHÓNG TIỀM NĂNG
+                                    br
+                                    | HỌC THUẬT
+                              .b-des 
+                                 .mona-content
+                                    ul 
+                                       li 
+                                          | CHƯƠNG TRÌNH IELTS, SAT TOÀN DIỆN
+                                       li 
+                                          | Cam kết 100% đạt brand & chuẩn mọi kỳ thi
+                              .b-btn
+                                 +Btn("Đăng ký học thử miễn phí")
+                        .b-dcor 
+                           +img("bn-epx-md.png")
+      +rse()
+   +cn-box()
+   section.sec-eni.ss-pd-t.custom
+      .container 
+         .eni 
+            .eni-wrap 
+               .eni-head.t-center.mb-40
+                  +title("","ƯƠM MẦM TIỀM NĂNG NGÔN NGỮ")
+               .eni-block 
+                  .eni-list 
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text THIẾU THÓI QUEN HỌC TẬP
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Bé ít cơ hội tiếp xúc với tiếng Anh chuẩn 100%, phát âm chưa tự nhiên và ngại phản xạ.
+                           .box-img
+                              .b-icon
+                                 .inner-icon
+                                    +img("eni-icon.svg")
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text THIẾU THÓI QUEN HỌC TẬP
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Bé ít cơ hội tiếp xúc với tiếng Anh chuẩn 100%, phát âm chưa tự nhiên và ngại phản xạ.
+                           .box-img
+                              .b-icon
+                                 .inner-icon
+                                    +img("eni-icon.svg")
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text LỆCH KỸ NĂNG GIAO TIẾP
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Bé ít cơ hội tiếp xúc với tiếng Anh chuẩn 100%, phát âm chưa tự nhiên và ngại phản xạ.
+                           .box-img
+                              .b-icon
+                                 .inner-icon
+                                    +img("eni-icon.svg")
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text BẬN RỘN ĐỂ THEO SÁT CON
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Phụ huynh cần biết tiến độ phát triển của bé để hỗ trợ khi cần
+                           .box-img
+                              .b-icon
+                                 .inner-icon
+                                    +img("eni-icon.svg")
+   section.sec-know.ss-pd-t
+      .container 
+         .know 
+            .know-wrap 
+               .know-head.t-center.mb-40
+                  +title("CHỈ CÓ Ở YOLA","GIÁ TRỊ GIÁO DỤC & KIẾN THỨC VƯỢT NGOÀI ĐIỂM THI")
+               .know-block 
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           each i,index in Array(5)
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img("know-img.jpg")
+                                    .b-ctn 
+                                       h3.t-text NỀN TẢNG HỌC THUẬT 
+                                       .t-des 
+                                          p 
+                                             | Xây dựng nền tảng ngôn ngữ vững chắc & đều kỹ năng, kết hợp kỹ năng tư duy và học tập hiệu quả
+   section.sec-know.ss-pd
+      .container 
+         .know 
+            .know-wrap 
+               .know-head.t-center.mb-40
+                  +title("LỘ TRÌNH TIẾNG ANH HỌC THUẬT","IELTS TOÀN DIỆN")
+               .know-block 
+                  .know-txt VỮNG KIẾN THỨC NỀN
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           -
+                              var arrs = [
+                                 {
+                                    txt:"PRE-IELTS FOUNDATION",des:"Bạn sẽ… xây nền vững chắc ngữ pháp – từ vựng và làm quen với cấu trúc đề thi IELTS."
+                                 },
+                                 {
+                                    txt:"IELTS 5.0",des:"Bạn sẽ… củng cố văn phạm, mở rộng từ vựng và nắm kỹ thuật xử lý các câu hỏi dễ nhất."
+                                 },
+                                 {
+                                    txt:"IELTS 5.5",des:"Bạn sẽ tăng vốn từ theo chủ điểm, luyện nghe đoạn dài, diễn giải ý tưởng rõ ràng đúng ngữ pháp"
+                                 }
+                              ]
+                           each i,index in arrs
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img(`pre-${index+1}.jpg`)
+                                    .b-ctn 
+                                       h3.t-text #{i.txt}
+                                       .t-des #{i.des}
+                                       +Btn("Đăng ký ngay","","full none-icon")
+               .know-block 
+                  .know-txt TĂNG TỐC TƯ DUY
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           -
+                              var arrs = [
+                                 {
+                                    txt:"IELTS 6.0",
+                                    des:"Bạn sẽ… tư duy chặt chẽ, nối ý mượt, quản lý thời gian tốt để hoàn thành trọn vẹn tất cả task."
+                                 },
+                                 {
+                                    txt:"IELTS 6.5",
+                                    des:"Bạn sẽ… phát triển ý chặt chẽ, sử dụng cụm từ học thuật tự nhiên, làm được nhiều dạng đề nâng cao"
+                                 },
+                              ]
+                           each i,index in arrs
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img(`pre-${index+1}.jpg`)
+                                    .b-ctn 
+                                       h3.t-text #{i.txt}
+                                       .t-des #{i.des}
+                                       +Btn("Đăng ký ngay","","full none-icon")
+               .know-block 
+                  .know-txt BỨC PHÁ HỌC BỔNG
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           -
+                              var arrs = [
+                                 {
+                                    txt:"IELTS ADVANCED 7.0+",
+                                    des:"Bạn sẽ… luyện đề khó, diễn đạt lập luận cá nhân một cách logic & gãy gọn như học giả."
+                                 },
+                                 {
+                                    txt:"IELTS WRITING CẤP TỐC",
+                                    des:"Bạn sẽ… master tất cả dạng Task 1 & 2, dùng ngữ pháp nâng cao phù hợp với dạng bài, viết ý mạch lạc"
+                                 },
+                                  {
+                                    txt:"IELTS SPEAKING CẤP TỐC",
+                                    des:"Bạn sẽ… luyện phản xạ theo chủ đề, phát âm–ngữ điệu tự nhiên hơn, mở rộng cách diễn đạt như người bản xứ"
+                                 },
+                              ]
+                           each i,index in arrs
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img(`pre-${index+1}.jpg`)
+                                    .b-ctn 
+                                       h3.t-text #{i.txt}
+                                       .t-des #{i.des}
+                                       +Btn("Đăng ký ngay","","full none-icon")
+   section.sec-know.ss-pd-b
+      .container 
+         .know 
+            .know-wrap 
+               .know-head.t-center.mb-40
+                  +title("LỘ TRÌNH SAT","SĂN HỌC BỔNG")
+               .know-block 
+                  .know-txt DIGITAL SAT CÁ NHÂN 1-1
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           -
+                              var arrs = [
+                                 {
+                                    txt:"SAT 1-1",
+                                    des:"Bạn sẽ… có lộ trình 1-1 tối ưu cho điểm yếu, luyện chiến thuật giải nhanh – tránh bẫy sát sao để đạt điểm tối đa."
+                                 },
+                              ]
+                           each i,index in arrs
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img(`pre-${index+1}.jpg`)
+                                    .b-ctn 
+                                       h3.t-text #{i.txt}
+                                       .t-des #{i.des}
+                                       +Btn("Đăng ký ngay","","full none-icon")
+               .know-block 
+                  .know-txt DIGITAL 1-1
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           -
+                              var arrs = [
+                                 {
+                                    txt:"SAT CƠ BẢN",
+                                    des:"Bạn sẽ… nắm chắc chiến thuật các dạng, tăng tốc từ vựng học thuật."
+                                 },
+                                 {
+                                    txt:"SAT NÂNG CAO",
+                                    des:"Bạn sẽ… có kỹ thuật đọc đúng >90%, chinh phục 6 chủ điểm toán khó, áp dụng chiến thuật “gỡ điểm” để vượt 1250+."
+                                 },
+                              ]
+                           each i,index in arrs
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img(`pre-${index+1}.jpg`)
+                                    .b-ctn 
+                                       h3.t-text #{i.txt}
+                                       .t-des #{i.des}
+                                       +Btn("Đăng ký ngay","","full none-icon")
+   +faq() 
+   +card-sv()
+   +card-ph()
+   +form()

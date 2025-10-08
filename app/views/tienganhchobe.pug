@@ -1,0 +1,156 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-eng'
+
+block container
+   .bnh.bn-eng
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item
+                        .b-img
+                           .h-full
+                              +img("bn-cus (1).png")
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 span.t20.c-text CHƯƠNG TRÌNH TIẾNG ANH CHO BÉ 3-10 TUỔI
+                                 .t-text 
+                                    | ƯƠM MẦM TIỀM NĂNG 
+                                    br
+                                    | NGÔN NGỮ
+                              .b-des 
+                                 .mona-content
+                                    ul 
+                                       li 
+                                          | Xây nền tảng tiếng Anh vững chắc.
+                                       li 
+                                          | Phát triển kỹ năng  tư duy thế kỷ 21
+                              .b-btn
+                                 +Btn("Đăng ký học thử miễn phí")
+                        .b-dcor 
+                           +img("bn-cus-md (1).png")
+                           .inner-dc 
+                              +img("bn-cus-dc.png")
+      +rse()
+   +cn-box()
+   section.sec-eni.ss-pd-t
+      .container 
+         .eni 
+            .eni-wrap 
+               .eni-head.t-center.mb-40
+                  +title("","ƯƠM MẦM TIỀM NĂNG NGÔN NGỮ")
+               .eni-block 
+                  .eni-list 
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text THIẾU THÓI QUEN HỌC TẬP
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Bé ít cơ hội tiếp xúc với tiếng Anh chuẩn 100%, phát âm chưa tự nhiên và ngại phản xạ.
+                           .box-img
+                              .b-bg 
+                                 +img("eni-b1.png")
+                              .b-model 
+                                 +img("eni-m1.png")
+                                 .b-dc 
+                                    +img("eni-d1.png")
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text THIẾU THÓI QUEN HỌC TẬP
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Bé ít cơ hội tiếp xúc với tiếng Anh chuẩn 100%, phát âm chưa tự nhiên và ngại phản xạ.
+                           .box-img
+                              .b-bg 
+                                 +img("eni-b2.png")
+                              .b-model 
+                                 +img("eni-m2.png")
+                                 .b-dc 
+                                    +img("eni-d2.png")
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text LỆCH KỸ NĂNG GIAO TIẾP
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Bé ít cơ hội tiếp xúc với tiếng Anh chuẩn 100%, phát âm chưa tự nhiên và ngại phản xạ.
+                           .box-img
+                              .b-bg 
+                                 +img("eni-b2.png")
+                              .b-model 
+                                 +img("eni-m2.png")
+                                 .b-dc 
+                                    +img("eni-d3.png")
+                     .eni-item 
+                        .b-inner 
+                           .box-left 
+                              h3.t-text BẬN RỘN ĐỂ THEO SÁT CON
+                              .box-des
+                                 .t-des 
+                                    p 
+                                       | Phụ huynh cần biết tiến độ phát triển của bé để hỗ trợ khi cần
+                           .box-img
+                              .b-bg 
+                                 +img("eni-b2.png")
+                              .b-model 
+                                 +img("eni-m4.png")
+                                 .b-dc 
+                                    +img("eni-d1.png")
+   section.sec-know.ss-pd-t
+      .container 
+         .know 
+            .know-wrap 
+               .know-head.t-center.mb-40
+                  +title("CHỈ CÓ Ở YOLA","GIÁ TRỊ GIÁO DỤC & KIẾN THỨC VƯỢT NGOÀI ĐIỂM THI")
+               .know-block 
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           each i,index in Array(5)
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img("know-img.jpg")
+                                    .b-ctn 
+                                       h3.t-text NỀN TẢNG HỌC THUẬT 
+                                       .t-des 
+                                          p 
+                                             | Xây dựng nền tảng ngôn ngữ vững chắc & đều kỹ năng, kết hợp kỹ năng tư duy và học tập hiệu quả
+   section.sec-know.ss-pd
+      .container 
+         .know 
+            .know-wrap 
+               .know-head.t-center.mb-40
+                  +title("LỘ TRÌNH","CHO BÉ TỪ 3 - 10 TUỔI")
+               .know-block 
+                  .know-slider.slideSw
+                     .b-sw.posi-rl
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           each i,index in Array(5)
+                              .swiper-slide.col.col-4
+                                 .know-it 
+                                    .b-img 
+                                       +img("know-img (1).jpg")
+                                    .b-ctn 
+                                       h3.t-text TIẾNG ANH CHO BÉ
+                                       .t-des 
+                                          p 
+                                             | Bé sẽ mở rộng vốn từ, phản xạ nhanh hơn và giao tiếp tự nhiên.
+                                       +Btn("Đăng ký ngay","","full none-icon")
+   +card-gv()
+   +card-sv()
+   +card-ph()
+   +faq()
+   +form()

@@ -1,0 +1,230 @@
+@use "../core/mixin" as *;
+@use "../core/font" as *;
+
+.bnh {
+  position: relative;
+  &-item {
+    min-height: calc(100vh - var(--size-hd));
+    position: relative;
+    padding: 4% 0;
+    @include max(600px) {
+      min-height: 72rem;
+      padding-top: 4rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      @include full;
+      background: linear-gradient(
+        180deg,
+        #325d9e 0%,
+        rgba(50, 93, 158, 0) 42.68%
+      );
+      z-index: 1;
+    }
+    .b-img {
+      position: absolute;
+      @include full;
+      z-index: -1;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+    .b-content {
+      color: var(--color-white);
+      width: 66rem;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .b-head {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      .t-text {
+        @include fz-72;
+        @include font-second;
+        font-weight: 700;
+        line-height: 1.2;
+        @include max(414px) {
+          font-size: 10vw;
+        }
+      }
+      .txt {
+        @include fz-40;
+      }
+    }
+    .b-des {
+      font-size: 1.8rem;
+      max-width: 35rem;
+    }
+    .b-btn {
+      .btn {
+        background: #1e87cd;
+        &::after {
+          background: var(--color-sec);
+        }
+      }
+    }
+  }
+}
+.is-pc {
+  @include max(600px) {
+    display: none;
+  }
+}
+.is-mb {
+  @include min(601px) {
+    display: none;
+  }
+}
+.h-full {
+  height: 100%;
+}
+
+.bn-eng {
+  .b-dcor {
+    position: absolute;
+    z-index: 5;
+    bottom: 15%;
+    left: 59%;
+    transform: translate(-50%, 0%);
+    width: 25%;
+    @include max(1200px) {
+      width: 35%;
+    }
+    @include max(500px) {
+      width: 70%;
+      position: relative;
+      left: -6%;
+      transform: unset;
+      margin: 0 auto;
+      margin-top: 6rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
+    .inner-dc {
+      position: absolute;
+      left: 61%;
+      transform: translate(-50%, -50%);
+      top: 16%;
+      width: 110%;
+    }
+  }
+  .bnh-item .b-img img {
+    @include max(500px) {
+      object-fit: contain;
+    }
+  }
+  .bnh-item::after {
+    display: none;
+  }
+  .bnh-item .b-content {
+    color: var(--color-text);
+  }
+  .b-content {
+    gap: 0;
+  }
+}
+.page-teen {
+  .bnh.bn-eng {
+    .b-dcor {
+      @include max(500px) {
+        left: unset;
+      }
+      .inner-dc {
+        left: 45%;
+        top: 45%;
+      }
+    }
+    .b-dcor {
+      @include max(500px) {
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          height: 50%;
+          width: 100vw;
+          transform: translateX(-50%);
+          background: linear-gradient(
+            180deg,
+            rgba(243, 209, 236, 0) 0%,
+            #f3d1ec 100%
+          );
+        }
+      }
+    }
+    .bnh-item .b-img {
+      @include max(500px) {
+        top: unset;
+        height: 50%;
+        z-index: 1;
+      }
+      img {
+        @include max(500px) {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+.page-epx {
+  .bnh-item .b-des {
+    max-width: 40rem;
+  }
+  .bnh-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .bn-eng .bnh-item .b-content {
+    color: var(--color-white);
+  }
+  .bnh {
+    .b-dcor {
+      bottom: 0;
+      margin-top: auto;
+      @include max(500px) {
+        left: unset;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 100vw;
+          height: 25%;
+          transform: translateX(-50%);
+          background: linear-gradient(
+            180deg,
+            rgba(243, 209, 236, 0) 0%,
+            #ffff 100%
+          );
+        }
+      }
+    }
+    &.bn-eng .bnh-item .b-img img {
+      object-fit: cover;
+      object-position: 65%;
+    }
+  }
+}
+.bnh.bn-pre {
+  .bnh-item .b-content {
+    width: 84rem;
+  }
+  .bnh-item .b-head .t-text {
+    @include max(500px) {
+      font-size: 8vw;
+    }
+  }
+}

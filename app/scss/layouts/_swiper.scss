@@ -1,0 +1,222 @@
+@use "../core/mixin" as *;
+.swiper-wrapper.row {
+  flex-wrap: nowrap;
+}
+
+.swiper.rows {
+  .col {
+    margin-bottom: 0;
+  }
+}
+
+.swiper-container {
+  overflow: hidden;
+}
+
+.swiper-slide {
+  height: initial;
+  overflow: hidden;
+}
+.mb-24 {
+  margin-bottom: 2.4rem;
+}
+.swiper-pagination {
+  position: static;
+  margin-top: 2.4rem;
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  display: none;
+  @include max(500px) {
+    margin-top: 1.2rem;
+  }
+  &-bullet {
+    --circle: 0.5rem;
+    background-color: rgba(26, 44, 80, 0.2);
+    opacity: 1;
+    position: relative;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: unset !important;
+    transition: 0.5s ease-in-out;
+    border-radius: 100rem;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transition: 0.5s ease-in-out width;
+      background: var(--color-text);
+    }
+
+    &-active {
+      width: 3.2rem;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+.swiper-control {
+  display: flex;
+  @include flex;
+  align-items: center;
+  gap: 1.6rem;
+  --size: 4.2rem;
+  font-size: 1.6rem;
+  &.control-right {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    transform: translateY(-25%);
+  }
+  @include max(1200px) {
+    --size: 3.2rem;
+    font-size: 1.6rem;
+    display: none;
+  }
+
+  &-btn {
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100rem;
+    background-color: var(--color-sec);
+    @include mid-flex;
+    cursor: pointer;
+    @include transitionRe;
+    z-index: 5;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-white);
+    @include affter(var(--color-pri));
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &.swiper-button-disabled {
+      background-color: rgba(67, 69, 76, 0.6);
+      cursor: default;
+      box-shadow: none;
+    }
+    &.swiper-button-lock {
+      display: none;
+    }
+
+    i {
+    }
+
+    @include hover {
+      &:not(.swiper-button-disabled) {
+        color: white !important;
+        &::after {
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.white {
+    .swiper-control-btn {
+      background-color: transparent;
+      border-color: white;
+      color: white;
+    }
+
+    &.mobile-plus {
+      .swiper-control-btn {
+        @include max(1350px) {
+          background-color: white;
+          border-color: var(--color-pri);
+          color: var(--color-pri);
+        }
+      }
+    }
+  }
+
+  &.posi {
+    .swiper-control-btn {
+      @include posi-vertical;
+    }
+
+    &.minus {
+      .swiper-prev {
+        right: calc(100% + 2.4rem);
+
+        @include max(1350px) {
+          right: unset;
+          left: calc(var(--size) / 2 * -1);
+        }
+      }
+
+      .swiper-next {
+        left: calc(100% + 2.4rem);
+
+        @include max(1350px) {
+          left: unset;
+          right: calc(var(--size) / 2 * -1);
+        }
+      }
+
+      &.mobile-plus {
+        @include max(500px) {
+          .swiper-prev {
+            left: calc((var(--size) / 2 * -1) + (1.5rem / 2));
+          }
+
+          .swiper-next {
+            right: calc((var(--size) / 2 * -1) + (1.5rem / 2));
+          }
+        }
+      }
+    }
+
+    &.midle {
+      .swiper-prev {
+        left: calc(var(--size) / 2 * -1);
+      }
+
+      .swiper-next {
+        right: calc(var(--size) / 2 * -1);
+      }
+    }
+
+    &.plus {
+      .swiper-prev {
+        left: 1rem;
+      }
+
+      .swiper-next {
+        right: 1rem;
+      }
+    }
+
+    &.mobile-plus {
+      @include max(500px) {
+        .swiper-prev {
+          left: calc((var(--size) / 2 * -1) + (1.5rem / 2));
+        }
+
+        .swiper-next {
+          right: calc((var(--size) / 2 * -1) + (1.5rem / 2));
+        }
+      }
+    }
+  }
+}
+
+.swiper-pagination-progressbar {
+  background: var(--color-black);
+  height: 0.1rem !important;
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: var(--color-sec) !important;
+}

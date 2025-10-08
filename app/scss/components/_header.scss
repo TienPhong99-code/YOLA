@@ -1,0 +1,56 @@
+@use "../core/mixin" as *;
+@use "../core/font" as *;
+
+.hd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--size-hd);
+  z-index: 100;
+  background: var(--color-white);
+  transition: 0.3s ease-in-out;
+  &.sticky {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 0.8rem 2.4rem;
+  }
+  &-wrap {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  &-logo {
+    max-width: 10rem;
+    @include max(500px) {
+      max-width: 8rem;
+    }
+    .custom-logo-link {
+      display: flex;
+      img {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+    }
+  }
+  &-menu {
+  }
+  &-action {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+    @include max(1200px) {
+      gap: 1.2rem;
+    }
+    .btn {
+      background: #e4862c;
+      min-height: 4rem;
+      font-size: 1.4rem;
+      padding: 0.6rem 1.6rem;
+      @include max(1200px) {
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}

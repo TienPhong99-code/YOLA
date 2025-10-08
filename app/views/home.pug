@@ -1,0 +1,273 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-home'
+
+block container
+   .bnh 
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item 
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 .t-text 
+                                    | KHAI PHÓNG TIỀM NĂNG
+                                 span.txt Dẫn lối Nhân - Tài
+                              .b-des 
+                                 p 
+                                    | YOLA trao nền tảng tiếng Anh học thuật vững chắc & nuôi dưỡng khát khao tri thức cho mọi hoài bão lớn
+                              .b-btn
+                                 +Btn("Câu chuyện YOLA ")
+                        .b-img
+                           .is-pc.h-full
+                              +img("bnh-img (1).jpg")
+                           .is-mb.h-full
+                              +img("bnh-img-mb (1).jpg")
+      .rse 
+         .container 
+            .rse-wrap 
+               .rse-text 
+                  span.txt Tìm khóa học theo độ tuổi và nhu cầu
+               .rse-panel 
+                  .rse-box.rse-old
+                     span.icon 
+                        +img("rse-old.svg")
+                     .b-select
+                        select(name="" data-placeholder="Độ tuổi").re-select-main.re-select-main-old
+                           option(value="") 
+                           option(value="7-12")  7- 12 tuổi
+                           option(value="13-18")  13- 18 tuổi
+                           option(value="19-25")  19- 25 tuổi
+                           option(value="26-35")  26- 35 tuổi
+                  .rse-box.rse-course
+                     span.icon 
+                        +img("rse-course.svg")
+                     .b-select 
+                        select(name="" data-placeholder="Chương trình học").re-select-main.re-select-main-course
+                           option(value="")
+                           option(value="tieng-anh-be")  Tiếng Anh cho bé
+                           option(value="tieng-anh-thieu-nien")  Tiếng Anh thiếu niên
+                           option(value="tieng-anh-ielts-sat")  Tiếng Anh luyện thi IELTS, SAT
+                  .rse-btn 
+                     +Btn("Tìm kiếm","button","second")
+               .rse-ic 
+                  +img("rse-ic.gif")
+   .cn-box.scroll-hide
+      .container  
+         .cn-box-wrap
+            .cn-box-item.iwt 
+               span.icon 
+                  +img("cn-box-ic (1).svg")
+               span.txt TƯ VẤN NGAY
+            .cn-box-item.iwt 
+               span.icon 
+                  +img("cn-box-ic (2).svg")
+               span.txt KHÓA HỌC
+   section.sec-snum 
+      .container
+         .snum 
+            .snum-wrap 
+               .snum-head 
+                  +title("16 NĂM 1 KHÁT VỌNG","THAY ĐỔI CUỘC SỐNG HỌC SINH VIỆT","center white")
+      .snum-block 
+         .snum-bg
+            +img("snum-dc.png")
+         .snum-panel.rolodex
+            .snum-slider.rolodex-stage
+               .snum-wrapper.rolodex-item
+                  .snum-item 
+                     .t-head 
+                        span.t-num 
+                           | 2000+
+                        span.text Tỷ đồng
+                     .t-ctn
+                        .t-des
+                           p 
+                              | Tổng giá trị học bổng được trao từ top 100 trường đại học Mỹ, Anh, Úc
+                        .d-flex.a-center.j-center.icon-group
+                           .icon 
+                              +img("snum-ic (1).svg")
+                           .icon 
+                              +img("snum-ic (2).svg")
+                           .icon 
+                              +img("snum-ic (3).svg")
+               .snum-wrapper.rolodex-item
+                  .snum-item 
+                     .t-head 
+                        span.t-num 
+                           | 68,000+
+                        span.text Học viên
+                     .t-ctn 
+                        .t-des 
+                           p 
+                              | đạt điểm đầu vào trường đại học Mỹ, Anh, Úc
+               .snum-wrapper.rolodex-item
+                  .snum-item 
+                     .t-head 
+                        span.t-num 
+                           | 90%
+                        span.text
+                           | Học viên
+                     .t-ctn 
+                        .t-des 
+                           p 
+                              | đạt điểm thi Cambridge kỳ vọng
+               .snum-wrapper.rolodex-item
+                  .snum-item 
+                     .t-head 
+                        span.t-num 
+                           | 16.000
+                        span.text
+                           | Học viên
+                     .t-ctn 
+                        .t-des 
+                           p 
+                              | đạt IELTS 6.0+
+               .snum-wrapper.rolodex-item
+                  .snum-item 
+                     .t-head 
+                        span.t-num 
+                           | 11.600
+                        span.text
+                           | Học viên
+                     .t-ctn 
+                        .t-des 
+                           p 
+                              | đạt IELTS 6.5+
+               .snum-wrapper.rolodex-item
+                  .snum-item 
+                     .t-head 
+                        span.t-num 
+                           | 5.878
+                        span.text
+                           | Học viên
+                     .t-ctn 
+                        .t-des 
+                           p 
+                              |đạt IELTS 7.0+
+         .snum-img.gsapOpa
+            .inner
+               .inner-img
+                  +img("snum-img.png")
+            .dcor 
+               .d-right
+                  .inner-dc
+                     +img("flower-r.svg")
+               .d-left
+                  .inner-dc
+                     +img("flower-r.svg")
+   section.sec-course.ss-pd-b
+      .container 
+         .course.slideSwLoop
+            .course-wrap 
+               .course-head.mb-40
+                  +title("CHƯƠNG TRÌNH GIÁO DỤC CHẤT LƯỢNG","CHUẨN MỌI LỨA TUỔI","center")
+               .course-block 
+                  .course-panel
+                     .course-slider
+                        .b-sw.posi-rl
+                           +SwiperControl("posi midle")
+                           +Swiper()
+                              each i,index in Array(1)
+                                 .swiper-slide.col.col-4
+                                    .course-item
+                                       a(href="").hidden-link 
+                                       .b-inner 
+                                          .b-img 
+                                             +img("course-img (1).jpg")
+                                          .b-content
+                                             h3.t-text 
+                                                | TIẾNG ANH CHO BÉ
+                                             .t-des 
+                                                p 
+                                                   | Học qua trải nghiệm, 100% giáo viên bản xứ
+                                                p 
+                                                   | Đa môn Sáng tạo - Công nghệ - Lãnh đạo
+                                 .swiper-slide.col.col-4
+                                    .course-item
+                                       a(href="").hidden-link 
+                                       .b-inner 
+                                          .b-img 
+                                             +img("course-img (2).jpg")
+                                          .b-content
+                                             h3.t-text 
+                                                | TIẾNG ANH THIẾU NHI
+                                             .t-des 
+                                                p 
+                                                   | Học qua trải nghiệm, dự án
+                                                p 
+                                                   | Vững nền tiếng Anh tư duy
+                                             .t-bot 
+                                                .d-flex.a-center.j-center
+                                                   span.txt Đạt chứng chỉ:
+                                                   span.b-tag Cambridge Flyers
+                                 .swiper-slide.col.col-4
+                                    .course-item
+                                       a(href="").hidden-link 
+                                       .b-inner 
+                                          .b-img 
+                                             +img("course-img (3).jpg")
+                                          .b-content
+                                             h3.t-text 
+                                                | TIẾNG ANH THIẾU NIÊN
+                                             .t-des 
+                                                p 
+                                                   | Vững nền học thuật (Ngữ pháp, Đọc - Viết)
+                                                p 
+                                                   | Xây dựng kiến thức nền (Tự nhiên, Xã hội)
+                                             .t-bot 
+                                                .d-flex.a-center.j-center
+                                                   span.txt Đạt chứng chỉ:
+                                                   span.b-tag IELTS: 6.5+  
+                                 .swiper-slide.col.col-4
+                                    .course-item
+                                       a(href="").hidden-link 
+                                       .b-inner 
+                                          .b-img 
+                                             +img("course-img (4).jpg")
+                                          .b-content
+                                             h3.t-text 
+                                                | TIẾNG ANH IELTS, SAT
+                                             .t-des 
+                                                p 
+                                                   | Tư duy & phản biện học thuật
+                                                p 
+                                                   | Chiến thuật đạt band cao cho mọi kỳ thi
+                                             .t-bot 
+                                                .d-flex.a-center.j-center
+                                                   span.txt Đạt chứng chỉ:
+                                                   span.b-tag IELTS 7.0+
+                                                   span.b-tag SAT 1250+ 
+                        +pagination()
+   +card-gv()
+   section.sec-brd.ss-pd 
+      .brd-dc 
+         +img("brd-dc.png")
+      .container 
+         .brd 
+            .brd-wrap 
+               .brd-head
+                  +title("GIÁO TRÌNH NGHIÊN CỨU","CHUẨN CAMBRIDGE","center white")
+               .brd-block 
+                  .brd-slider.slideSwLogo
+                     .b-sw 
+                        +Swiper()
+                           each i,index in Array(2)
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (1).png")
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (2).png")
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (3).png")
+                     +pagination("brd-pagi")
+   +card-sv()
+   +card-ph()
+   +form()

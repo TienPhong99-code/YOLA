@@ -1,0 +1,36 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-class'
+
+block container
+   .bnh.bn-eng
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item
+                        .b-img
+                           .h-full
+                              +img("bn-class.jpg")
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 span.t20.c-text CHƯƠNG TRÌNH TIẾNG ANH CHO BÉ 3-10 TUỔI
+                                 .t-text 
+                                    | ƯƠM MẦM TIỀM NĂNG 
+                                    br
+                                    | NGÔN NGỮ
+                              .b-des 
+                                 .mona-content
+                                    ul 
+                                       li 
+                                          | Xây nền tảng tiếng Anh vững chắc.
+                                       li 
+                                          | Phát triển kỹ năng  tư duy thế kỷ 21
+                              .b-btn
+                                 +Btn("Đăng ký học thử miễn phí")
+      +rse()
+   +cn-box()

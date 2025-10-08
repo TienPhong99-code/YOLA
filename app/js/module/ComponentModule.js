@@ -15,6 +15,19 @@ export default function ComponentModule() {
       });
     });
   }
+  document.addEventListener("scroll", function () {
+    const elements = document.querySelectorAll(".barJsFixed");
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const hd = document.querySelector(".hd");
+      const hdHeight = hd ? hd.offsetHeight : 0;
+      if (rect.top <= hdHeight) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
+      }
+    });
+  });
   const scrollHide = document.querySelectorAll(".scroll-hide");
   if (scrollHide) {
     scrollHide.forEach((item) => {

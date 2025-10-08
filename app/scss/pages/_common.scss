@@ -23,7 +23,12 @@
     }
   }
 }
-
+.page-class {
+  background: #fffbd0;
+      ~ .ft {
+    background: #fffbd0;
+  }
+}
 .page-eng {
   background: #fffbd0;
   ~ .ft {
@@ -563,6 +568,17 @@
     display: none;
   }
 }
+.page-pre{
+  --bg-table:#EEF6FE;
+  --bg-form:#bbdafb;
+
+}
+.page-class{
+  --bg-table:#FDE680;
+  --bg-form:#FDE680;
+
+  
+}
 .table-custom {
   --bg-thead: #f9f9f9;
   --cl-thead: #15191e;
@@ -610,7 +626,7 @@
     }
   }
   tbody {
-    background: #eef6fe;
+    background: var(--bg-table);
     tr {
       &:not(:last-child) {
         border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
@@ -730,7 +746,7 @@
 .dkf {
   &-wrap {
     padding: 5.6rem 8rem;
-    background: #bbdafb;
+    background: var(--bg-form);
     border-radius: 1.2rem;
     @include max(1200px) {
       padding: 2.4rem 1.2rem;
@@ -769,6 +785,193 @@
         border-radius: 0.8rem !important;
         background: #fff;
       }
+    }
+  }
+}
+.se-box.active {
+  .inner-fixed {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background: #fff;
+    position: fixed;
+    top: calc(var(--size-hd) + 0rem);
+    z-index: 10;
+    padding: 1.2rem;
+    width: 120rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.8rem;
+  }
+  .d-flex {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .container {
+    height: auto;
+    padding: 0;
+  }
+}
+
+.sec-rsult {
+  padding: 10rem 0;
+  overflow: hidden;
+  position: relative;
+  @include max(1200px){
+    padding: 6rem 0;
+  }
+  @include max(768px){
+    padding-bottom: 2.4rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 251, 208, 0) 75.68%,
+      #fffbd0 100%
+    );
+  }
+}
+.rsult-block {
+  padding-top: 10%;
+  @include max(1024px){
+    padding-top: 4%;
+  }
+}
+.rsult-bg {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+.rsult-it {
+  padding: 2.4rem;
+  background: #fde680;
+  color: var(--color-text);
+  border-radius: 1.2rem;
+  position: relative;
+  z-index: 2;
+  @include max(768px){
+    padding: 1.6rem;
+    max-width: 65%;
+  }
+  .b-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    .t-text {
+      @include fz-24;
+      font-weight: 700;
+      @include max(500px){
+        font-size: 1.6rem;
+      }
+    }
+  }
+  
+}
+.rsult-row {
+  justify-content: space-between;
+  > .col {
+    width: calc(100% / 2.9);
+    @include max(768px){
+      width: 100%;
+    }
+  }
+}
+.rsult-md {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28%;
+  top: 40%;
+  z-index: -1;
+  @include max(768px){
+    top: unset;
+    right: 0%;
+    left: unset;
+    bottom: 0;
+    transform: translate(12%,0);
+    width: 40%;
+  }
+  @include max(500px){
+    width: 50%;
+    transform: translate(18%,0);
+
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+.rsult-panel{
+  @include max(768px){
+    padding-bottom: 15%;
+  }
+}
+.int-it {
+  height: 100%;
+  position: relative;
+  .b-inner{
+    height: 100%;
+    padding: 1.6rem;
+    border-radius: 1.2rem;
+    background: #FCCD00;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+  }
+  .b-img{
+    aspect-ratio: 562 / 320;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .b-ctn{
+    flex: 1;
+    color: var(--color-text);
+    .t-text{
+      @include fz-24;
+      font-weight: 700;
+    }
+    .t-des{
+      @include fz-16;
+    }
+  }
+}
+.int-slider{
+  .swiper,.swiper-container{
+    overflow: visible;
+  }
+  .swiper-slide{
+    @include max(768px){
+      width: 75%;
+    }
+    @include max(500px){
+      width: 100%;
     }
   }
 }

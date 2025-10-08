@@ -22,6 +22,26 @@
       );
       z-index: 1;
     }
+    .b-play{
+      width: 8rem;
+      height: 8rem;
+      @include mid;
+      position: absolute;
+      z-index: 2;
+      display: block;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      @include hover{
+        transform: translate(-50%,-50%) scale(0.9);
+      }
+      @include max(500px){
+        position: static;
+        margin: 0 auto;
+        transform: translateY(50%);
+        width: 4.6rem;
+        height: 4.6rem;
+      }
+    }
     .b-img {
       position: absolute;
       @include full;
@@ -74,6 +94,17 @@
       }
     }
   }
+}
+.bn-text{
+  .b-content{
+    color: var(--color-text);
+  }
+  .bnh-item{
+    &::after{
+      display: none;
+    }
+  }
+
 }
 .is-pc {
   @include max(600px) {

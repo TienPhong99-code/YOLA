@@ -5,14 +5,39 @@ block vars
    -bodyClass = 'page-news'
 
 block container
-   section.sec-news.ss-pd 
+   .bn-news
       .container 
-         .news 
+         .bn-head 
+            .txt TIN TỨC & SỰ KIỆN
+            h1.bn-title CẬP NHẬT TIN TỨC MỚI NHẤT TỪ YOLA
+   section.sec-news
+      .container 
+         .news.border-bot.ss-pd
             .news-wrap 
-               .news-head.mn-40
-                  +title("","TIN TUC")
+               .news-head.mb-40
+                  +title("","TIN TỨC")
                .news-block 
-                  .news-list.row 
-                     each i,index in Array(4)
-                        .col.col-3 
-                           +news(index)
+                  .news-slider.slideSw 
+                     .b-sw 
+                        +Swiper()
+                           each i,index in Array(4)
+                              .col.col-3.swiper-slide
+                                 +news(index)
+                  .mt-24
+                     +Btn("XEM THÊM","","center trans")
+   section.sec-news
+      .container 
+         .news.ss-pd 
+            .news-wrap 
+               .news-head.mb-40
+                  +title("","SỰ KIỆN")
+               .news-block 
+                  .news-slider.slideSw 
+                     .b-sw 
+                        +Swiper()
+                           each i,index in Array(4)
+                              .col.col-3.swiper-slide
+                                 +news(index)
+                  .mt-24
+                     +Btn("XEM THÊM","","center trans")
+   +form()

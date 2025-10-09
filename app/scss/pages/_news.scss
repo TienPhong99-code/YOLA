@@ -1,9 +1,9 @@
 @use "../core/mixin" as *;
 @use "../core/font" as *;
 .news-it {
-   display: flex;
-   flex-direction: column;
-   gap: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
   .b-img {
     .inner {
       aspect-ratio: 285 / 200;
@@ -25,15 +25,15 @@
   .b-head {
     display: flex;
     gap: 1.6rem;
-    .b-tag{
-      --bg:#56A3F7;
-      --cl:#fff;
-      --rs:0.4rem;
-      --fz:1rem;
-      --fw:700;
+    .b-tag {
+      --bg: #56a3f7;
+      --cl: #fff;
+      --rs: 0.4rem;
+      --fz: 1rem;
+      --fw: 700;
     }
-    .t-time{
-      --fz:1.2rem;
+    .t-time {
+      --fz: 1.2rem;
     }
   }
   .b-bot {
@@ -49,6 +49,81 @@
     .t-des {
       font-size: 1.4rem;
       @include lc(3);
+    }
+  }
+}
+.news-slider {
+  .swiper-slide {
+    @include max(1024px) {
+      width: 50%;
+    }
+    @include max(500px) {
+      width: 70%;
+    }
+  }
+}
+
+.news-dt-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  .title {
+    @include fz-56;
+    @include font-second;
+    color: var(--color-text);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .b-img {
+    display: block;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+.news-dt-slider {
+  .swiper {
+    @include min(1201px) {
+      --rg: 2.4rem;
+      &-wrapper {
+        flex-wrap: wrap;
+      }
+      &-slide {
+        margin-bottom: var(--rg) !important;
+      }
+    }
+    &-slide {
+      @include max(1200px) {
+        width: calc(100% / 3);
+      }
+      @include max(1024px) {
+        width: 50%;
+      }
+      @include max(500px) {
+        width: 70%;
+      }
+    }
+  }
+}
+.news-dt-content {
+  word-break: break-word;
+}
+.news-dt-side {
+  position: sticky;
+  top: var(--size-hd);
+  .t-head {
+    @include fz-24;
+    margin-bottom: 1.2rem;
+  }
+}
+.news-dt-row {
+  justify-content: space-between;
+  > .col {
+    @include max(1200px) {
+      width: 100%;
     }
   }
 }

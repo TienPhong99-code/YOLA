@@ -39,13 +39,14 @@ mixin PageNumber
                 i.fa.fa-angle-right
 mixin breadCrumb(arr)
   .breadcrumb 
-      ul.breadcrumb-list
-         li.breadcrumb-item(data-aos="fade-right")
-            a.breadcrumb-link(href="")
-               | Trang chủ
-         each txt in arr
+      .container
+         ul.breadcrumb-list
             li.breadcrumb-item(data-aos="fade-right")
-               a.breadcrumb-link(href="") #{txt}
+               a.breadcrumb-link(href="")
+                  +img("ic-home.svg")
+            each txt in arr
+               li.breadcrumb-item(data-aos="fade-right")
+                  a.breadcrumb-link(href="") #{txt}
 mixin pagination(classCustom)
     .swiper-pagination(class=classCustom)
 

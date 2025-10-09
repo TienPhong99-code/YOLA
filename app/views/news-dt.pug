@@ -1,0 +1,63 @@
+extends layout/layout
+
+block vars
+   -title = ''
+   -bodyClass = 'page-news-dt'
+
+block container
+   +breadCrumb(["Tin tức"])
+   section.sec-news-dt.ss-pd-b
+      .container 
+         .news-dt 
+            .news-dt-wrap 
+               .news-dt-row.row 
+                  .col.col-8
+                     .news-dt-panel
+                        .news-dt-head 
+                           h1.title 
+                              | RA MẮT IELTS INTENSIVE: KHOÁ LUYỆN THI IELTS CẤP TỐC, CAM KẾT TĂNG 1.0 – 2.0 BAND CHỈ SAU 7 TUẦN
+                           .b-img 
+                              +img("news-dt-bn.jpg")
+                           .b-toc 
+                              span.fw-7 TAB OF CONTENT (Mục lục sẽ có khi đổ dữ liệu vào)
+                        .news-dt-content 
+                           .mona-content 
+                              p 
+                                 | Hè này, “tín hiệu vũ trụ” đang gửi bằng IELTS 7.0+ đến những bạn sau:
+                                 br
+                                 | – Học sinh cấp 3, đặc biệt là lớp 10, 11 
+                                 br
+                                 | – Muốn thi IELTS từ tháng 8 đến tháng 12/2025
+                                 br
+                                 | – Muốn đạt IELTS để xét tuyển Đại học, du học, định cư
+                                 br
+                                 | Với Những-Cái-Nhất chỉ có tại YOLA, khoá IELTS Intensive giúp bạn đạt mục tiêu chỉ sau 7 tuần:
+                              h2.fw-7 HỌC HIỆU QUẢ NHỜ PHƯƠNG PHÁP KHOA HỌC VÀ CÔNG NGHỆ THÔNG MINH NHẤT
+                              p Mô hình BLAST độc quyền được biên soạn bởi chuyên gia IELTS, giúp bạn cải thiện toàn diện
+                              p YOLA Learning – Hệ thống học tập trực tuyến tiện lợi, với chức năng Personalized Learning, giúp phát hiện chính xác lỗ hổng kiến thức và giới thiệu bài ôn tập phù hợp
+                              p AI Speaking Lab – Công cụ luyện Speaking thông minh giúp bạn chủ động luyện mọi lúc mọi nơi. tiến bộ vượt trội nhờ bài sửa cá nhân hoá
+                              +img("news-dt-img-gr.png")
+                              h2.fw-7 HỌC VỮNG KIẾN THỨC VỚI ĐỘI NGŨ GIÁO VIÊN "XỊN" NHẤT 
+                              P Đội ngũ giáo viên IELTS 8.0+ top thành phố, giàu kinh nghiệm và chiến thuật luyện thi
+                              +img("news-dt-img2.jpg")
+                              h2.fw-7 HỌC HẾT MÌNH, SỬ DỤNG MIỄN PHÍ CÁC HỖ TRỢ HỌC TẬP TỐT NHẤT
+                              p IELTS Skills Enhancement: Lớp online bổ trợ 4 kỹ năng
+                              p Homeroom Teacher Service: Lớp bổ trợ kỹ năng Writing 
+                              h2.fw-7 Ghi danh sớm nhận ưu đãi HỜI NHẤT
+                              p Học bổng đến 27% duy nhất tháng 3
+                              p Bài kiểm tra IELTS chuẩn hoá, xác định trình độ hiện tại
+                              h2.fw-7 Đăng ký nhận ngay!
+                              p #YOLA #FunandEngaging #AcademicResult #YOLASummer #IELTSIntensive
+                  .col.col-3
+                     .news-dt-side 
+                        .t-head 
+                           span.fw-7 Bài viết liên quan
+                        .news-dt-slider.slideMb.mb-24
+                           .b-sw 
+                              +Swiper()
+                                 each i,index in Array(4)
+                                    .swiper-slide.col 
+                                       +news(index)
+                        .b-btn
+                           +Btn("XEM THÊM",'',"trans center")
+   +form()

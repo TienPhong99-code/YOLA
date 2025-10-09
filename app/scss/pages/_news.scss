@@ -1,2 +1,54 @@
 @use "../core/mixin" as *;
 @use "../core/font" as *;
+.news-it {
+   display: flex;
+   flex-direction: column;
+   gap: 1.6rem;
+  .b-img {
+    .inner {
+      aspect-ratio: 285 / 200;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .b-ctn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .b-head {
+    display: flex;
+    gap: 1.6rem;
+    .b-tag{
+      --bg:#56A3F7;
+      --cl:#fff;
+      --rs:0.4rem;
+      --fz:1rem;
+      --fw:700;
+    }
+    .t-time{
+      --fz:1.2rem;
+    }
+  }
+  .b-bot {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    color: var(--color-text);
+    .t-text {
+      @include fz-16;
+      font-weight: 700;
+      @include lc(3);
+    }
+    .t-des {
+      font-size: 1.4rem;
+      @include lc(3);
+    }
+  }
+}

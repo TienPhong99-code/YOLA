@@ -1,0 +1,18 @@
+extends layout/layout
+
+block vars
+   -title = ''
+   -bodyClass = 'page-news'
+
+block container
+   section.sec-news.ss-pd 
+      .container 
+         .news 
+            .news-wrap 
+               .news-head.mn-40
+                  +title("","TIN TUC")
+               .news-block 
+                  .news-list.row 
+                     each i,index in Array(4)
+                        .col.col-3 
+                           +news(index)

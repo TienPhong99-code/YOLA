@@ -365,3 +365,22 @@ mixin form()
                                           option(value="")  Tiếng anh luyện thi IELTS, SAT
                                  .col.form-ip
                                     +Btn("Gửi tin nhắn","button","m-left")
+mixin news(index)
+   .news-it 
+      .b-img 
+         .inner 
+            +img(`news-img${index+1}.jpg`)
+      .b-ctn 
+         .b-head
+            span.b-tag 
+               | SU KIEN
+            .t-time.iwt 
+               span.icon 
+                  +img("ic-date.svg")
+               span.c-text 21/06/2025
+         .b-bot 
+            h3.t-text 
+               a(href="") MỪNG KHAI TRƯƠNG YOLA PHAN ĐĂNG LƯU TẶNG HỌC BỔNG TĂNG TỐC ANH NGỮ ĐẾN 34%
+            .t-des
+               p 
+                  | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the

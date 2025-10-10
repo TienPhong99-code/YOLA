@@ -64,15 +64,25 @@ export default function SwiperModule() {
     loop: false,
     effect: "slide",
   });
-  if(window.innerWidth <= 1200){
-  functionSlider(".slideMb", {
-    speed: 1200,
-    slidesPerView: "auto",
-    initialSlide: 0,
-    centeredSlides: false,
-    loop: false,
-    effect: "slide",
-  });
+  if (window.innerWidth <= 1200) {
+    functionSlider(".slideMb", {
+      speed: 1200,
+      slidesPerView: "auto",
+      initialSlide: 0,
+      centeredSlides: false,
+      loop: false,
+      effect: "slide",
+    });
+  }
+  if (window.innerWidth >= 501) {
+    functionSlider(".slidePc", {
+      speed: 1200,
+      slidesPerView: "auto",
+      initialSlide: 0,
+      centeredSlides: false,
+      loop: false,
+      effect: "slide",
+    });
   }
   functionSlider(".slideSwLoop", {
     speed: 1200,

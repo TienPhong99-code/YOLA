@@ -44,17 +44,18 @@ block container
             .rsult-wrap 
                .rsult-head.t-center.mb-40
                   +title("KẾT QUẢ","SAU KẾT QUẢ")
-               .rsult-block 
+               .rsult-block.collapse-block
                   .rsult-panel.posi-rl
                      .rsult-md 
                         +img("rsult-md.png")
                      .rsult-row.row 
                         .col.col-4
-                           .rsult-it 
-                              .b-head 
+                           .rsult-it.collapse-item
+                              .b-head.collapse-head
                                  h3.t-text Năng lực Tiếng Anh 
                                  span.icon
-                              .b-body 
+                                    i.fa-light.fa-chevron-down
+                              .b-body.collapse-body
                                  .mona-content 
                                     ul 
                                        li 
@@ -62,11 +63,12 @@ block container
                                        li 
                                           | Nghe - hiểu và phản xạ tự nhiên
                         .col.col-4
-                           .rsult-it 
-                              .b-head 
+                           .rsult-it.collapse-item
+                              .b-head.collapse-head
                                  h3.t-text Tư duy & kỹ năng
                                  span.icon
-                              .b-body 
+                                    i.fa-light.fa-chevron-down
+                              .b-body.collapse-body
                                  .mona-content 
                                     ul 
                                        li 
@@ -74,11 +76,12 @@ block container
                                        li   
                                           | Hình thành và phát triển kĩ năng cho trẻ
                         .col.col-4
-                           .rsult-it 
-                              .b-head 
-                                 h3.t-text Thói quen học tậo
+                           .rsult-it.collapse-item
+                              .b-head.collapse-head
+                                 h3.t-text Thói quen học tập
                                  span.icon
-                              .b-body 
+                                    i.fa-light.fa-chevron-down
+                              .b-body.collapse-body
                                  .mona-content 
                                     ul 
                                        li 
@@ -86,11 +89,12 @@ block container
                                        li 
                                           | Yêu thích học và khám phá
                         .col.col-4
-                           .rsult-it 
-                              .b-head 
-                                 h3.t-text Thói quen học tậo
+                           .rsult-it.collapse-item
+                              .b-head.collapse-head
+                                 h3.t-text Thói quen học tập
                                  span.icon
-                              .b-body 
+                                    i.fa-light.fa-chevron-down
+                              .b-body.collapse-body
                                  .mona-content 
                                     ul 
                                        li 
@@ -103,52 +107,74 @@ block container
             .int-wrap 
                .int-head.t-center.mb-40
                   +title("NỘI DUNG","CHƯƠNG TRÌNH QUỐC TẾ RÈN TƯ DUY & KỸ NĂNG")
-               .int-block 
-                  .int-slider.slideSw 
-                     .b-sw.posi-rl 
+               .int-block.collapse-block
+                  .int-slider.slidePc
+                     .b-sw.posi-rl
                         +SwiperControl("posi midle")
                         +Swiper()
                            .swiper-slide.col.col-6 
-                              .int-it 
-                                 a(href="").hidden-link 
-                                 .b-inner 
-                                    .b-img
-                                       +img("int-img1.jpg")
-                                    .b-ctn 
-                                       h3.t-text 
-                                          | KHỞI TRÍ TÒ MÒ
-                                       .t-des 
-                                          p 
-                                             | Bắt đầu cùng trò chơi hỏi–đáp, bé luyện phản xạ nghe–nói với từ vựng và câu đơn giản
-                                          p  Bé tự tin giới thiệu sở thích và vui học qua tương tác tự nhiên
+                              .int-it.collapse-item
+                                 .int-inner
+                                    .b-inner 
+                                       .b-img
+                                          +img("int-img1.jpg")
+                                       .b-ctn 
+                                          .t-head.collapse-head
+                                             h3.t-text 
+                                                | KHỞI TRÍ TÒ MÒ
+                                             span.icon
+                                                i.fa-light.fa-chevron-down
+                                          .t-des.collapse-body
+                                             p 
+                                                | Bắt đầu cùng trò chơi hỏi–đáp, bé luyện phản xạ nghe–nói với từ vựng và câu đơn giản
+                                             p  Bé tự tin giới thiệu sở thích và vui học qua tương tác tự nhiên
+                                    .b-btn
+                                       +Btn("Kiểm tra trình độ miễn phí","","")
                            .swiper-slide.col.col-6 
-                              .int-it 
-                                 .b-inner 
-                                    .b-img
-                                       +img("int-img2.jpg")
-                                    .b-ctn 
-                                       h3.t-text 
-                                          | HỌC NGÔN NGỮ QUA ĐA MÔN & DỰ ÁN
-                                       .t-des
-                                          P 
-                                             | Bé vừa chơi vừa học qua dự án đa lĩnh vực:
-                                          P  
-                                             | Tiếng Anh Cambridge, Lãnh đạo, Công nghệ và Thiết kế.
-                                          P 
-                                             | Hoạt động muôn màu giúp bé phát triển ngôn ngữ, tư duy, công nghệ và sáng tạo.
+                              .int-it.collapse-item
+                                 .int-inner
+                                    .b-inner 
+                                       .b-img
+                                          +img("int-img2.jpg")
+                                       .b-ctn 
+                                          .t-head.collapse-head
+                                             h3.t-text 
+                                                | HỌC NGÔN NGỮ QUA ĐA MÔN & DỰ ÁN
+                                             span.icon
+                                                i.fa-light.fa-chevron-down
+                                          .t-des.collapse-body
+                                             P 
+                                                | Bé vừa chơi vừa học qua dự án đa lĩnh vực:
+                                             P  
+                                                | Tiếng Anh Cambridge, Lãnh đạo, Công nghệ và Thiết kế.
+                                             P 
+                                                | Hoạt động muôn màu giúp bé phát triển ngôn ngữ, tư duy, công nghệ và sáng tạo.
+                                    .b-btn
+                                       +Btn("Kiểm tra trình độ miễn phí","","")
                            .swiper-slide.col.col-6 
-                              .int-it 
-                                 .b-inner 
-                                    .b-img
-                                       +img("int-img3.jpg")
-                                    .b-ctn 
-                                       h3.t-text 
-                                          | CHIA SẺ & HOÀ NHẬP
-                                       .t-des
-                                          P
-                                             | Bé chia sẻ ý tưởng, hợp tác với bạn và giữ lớp sạch sẽ. Hoạt động vui học này giúp bé nhanh hòa nhập, cùng bạn hợp tác cùng nhau vui chơi.
-                  .mt-24 
+                              .int-it.collapse-item
+                                 .int-inner
+                                    .b-inner 
+                                       .b-img
+                                          +img("int-img3.jpg")
+                                       .b-ctn 
+                                          .t-head.collapse-head
+                                             h3.t-text 
+                                                | CHIA SẺ & HOÀ NHẬP
+                                             span.icon
+                                                i.fa-light.fa-chevron-down
+                                          .t-des.collapse-body
+                                             P
+                                                | Bé chia sẻ ý tưởng, hợp tác với bạn và giữ lớp sạch sẽ. Hoạt động vui học này giúp bé nhanh hòa nhập, cùng bạn hợp tác cùng nhau vui chơi.
+                                    .b-btn
+                                       +Btn("Kiểm tra trình độ miễn phí","","")
+                  .mt-24.btn-pc
                      +Btn("Kiểm tra trình độ miễn phí","","center")
+               .int-note 
+                  span.icon 
+                     +img("ic-star.svg")
+                  p
+                     | Trong mỗi buổi học, giáo viên sẽ dùng sticker để khen thưởng nhằm tạo động lực và khuyến khích các em mạnh dạn hơn
    section.sec-taf.ss-pd-b 
       .container 
          .taf 
@@ -186,8 +212,7 @@ block container
                                     span Thứ 3/5/7
                                  td(data-text="GIỜ HỌC:") 
                                     span 19:30 - 21:30
-   +faq()
-   section.sec-dkf.ss-pd
+   section.sec-dkf.ss-pd-b
       .container 
          .dkf 
             .dkf-wrap 
@@ -228,4 +253,5 @@ block container
                            .b-submit 
                               +Btn("Gửi yêu cầu","button","full")
    +card-sv()
+   +faq()
    +form()

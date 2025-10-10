@@ -1,0 +1,96 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-sys'
+
+block container
+   .bnh.bn-sys
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item 
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 span.t20 YOLA
+                                 .t-text 
+                                    | TỪ VIỆT NAM RA THẾ GIỚI
+                              .b-des 
+                                 p 
+                                    | Tại YOLA, tất cả trung tâm đều tuân thủ khắt khe tiêu chuẩn giáo dục của Bộ Giáo dục Việt Nam
+                                 P 
+                                    | Mọi lớp học được đầu tư hiện đại, thoải mái cho con tập trung đạt đến GIẢNG ĐƯỜNG THẾ GIỚI
+                        .b-img
+                           .h-full
+                              +img("bn-sys-img.jpg")
+      +rse()
+   +cn-box()
+   section.sec-sys.ss-pd 
+      .container 
+         .sys 
+            .sys-wrap 
+               .sys-row.row 
+                  .col.col-5
+                     .sys-panel 
+                        .t-head
+                           +title("","HỆ THỐNG CHI NHÁNH")
+                        .sys-se 
+                           p.txt.t20.fw-7.c-text.mb-24 TÌM TRUNG TÂM GẦN NHẤT
+                           .b-wrap 
+                              .b-select 
+                                 select(name="" data-placeholder="Thành Phố" class="re-select-main")
+                                    option(value="")
+                                    option(value="") Demo 
+                                    option(value="") Demo
+                              .b-select 
+                                 select(name="" data-placeholder="Tất cả các phường" class="re-select-main")
+                                    option(value="")
+                                    option(value="") Demo 
+                                    option(value="") Demo
+                        .sys-list 
+                           each i,index in Array(3)
+                              .sys-it 
+                                 .b-head.c-text
+                                    span.t-name.fw-7 YOALA ĐỖ XUÂN HỌP Q9
+                                    .t-list.d-flex.d-col
+                                       a(href="").txt 299B Đỗ Xuân Hợp, Phường Phước Long B, TP. Thủ Đức, TP. Hồ Chí Minh
+                                       a(href="").txt Hotline: 028 6285 8080
+                                 .b-bot 
+                                    a(href="").iwt.t-map
+                                       span.txt Xem trên map
+                                       span.icon 
+                                          +img("ic-map.svg")
+                                    a(href="").iwt.t-book
+                                       span.txt Đặt hẹn
+                                       span.icon 
+                                          +img("ic-book.svg")
+                        .sys-phone
+                           span.txt.t20.fw-7.mb-12 HOTLINE
+                           a(href="").iwt.t-link
+                              span.txt 028 6285 8080
+                              span.icon 
+                                 +img("ic-phone.svg")
+                  .col.col-7 
+                     .sys-map 
+                        .inner-frame 
+                           iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31355.010050119206!2d106.66598604107249!3d10.78246748890974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f0570b6cb9f%3A0x3146f755ce8eb045!2zQW5oIE5n4buvIFlPTEEgTmd1eeG7hW4gVHJpIFBoxrDGoW5nIHwgUS4xMA!5e0!3m2!1svi!2s!4v1760078606663!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+   section.ssm-wrapper.ss-pd-b
+      .sec-ssm
+         .container 
+            .ssm-pos
+               +title("MỖI PHÒNG HỌC","LÀ 1 NIỀM CẢM HỨNG CHO HỌC VIÊN")
+               .ssm 
+                  .ssm-wrap.scrollJS
+                     each i,index in Array(4)
+                        .ssm-panel.itemScroll.slideJs.getHeightGrid                
+                           ul.ssm-slider
+                              each i,index in Array(6)
+                                 li.ssm-slide 
+                                    .ssm-it 
+                                       .inner 
+                                          +img(`ssm-img${index+1}.jpg`)
+   +faq()
+   +form()

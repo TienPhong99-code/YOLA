@@ -28,6 +28,23 @@ export default function ComponentModule() {
       }
     });
   });
+    let speedGrids = [];
+  const gridWidth = document.querySelectorAll(".slideJs");
+  function getWidthGrid() {
+    document.querySelectorAll(".getHeightGrid").forEach((e, s) => {
+      e.style = `--height:${e.getBoundingClientRect().height}px; --speedGrid:${
+        speedGrids[s]
+      }s`;
+    });
+  }
+  gridWidth.forEach((e) => {
+    e = e.clientHeight / 50;
+    speedGrids.push(e);
+  }),
+    getWidthGrid(),
+    window.addEventListener("resize", () => {
+      getWidthGrid();
+    });
   const scrollHide = document.querySelectorAll(".scroll-hide");
   if (scrollHide) {
     scrollHide.forEach((item) => {
@@ -75,19 +92,7 @@ export default function ComponentModule() {
       });
     });
   }
-  //   Massonry
-  //   (function ($) {
-  //     "use strict";
 
-  //     $(window).load(function () {
-  //       $(".masonry").masonry({
-  //         columnWidth: ".grid-sizer",
-  //         gutter: ".gutter-sizer",
-  //         itemSelector: ".item-masonry",
-  //       });
-  //     });
-  //   })(jQuery);
-  //   Scroll to section
   window.addEventListener("load", function () {
     const speed = 0;
 
@@ -127,6 +132,7 @@ export default function ComponentModule() {
       }
     });
   });
+ 
   //   Readmore
   const readJS = document.querySelector(".readJS");
   if (!readJS) return;

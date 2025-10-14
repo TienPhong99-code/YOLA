@@ -1,0 +1,194 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-about'
+
+block container
+   .bnh.bn-ab
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item 
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 span.c-white.t20 YOLA KHÔNG CHỈ LÀ TRUNG TÂM ANH NGỮ TIẾNG ANH
+                                 .t-text 
+                                    | MÀ LÀ NƠI KHAI PHÓNG
+                                    br
+                                    | TIỀM NĂNG QUA NGÔN NGỮ
+                        .b-img
+                           .h-full
+                              +img("bn-ab.jpg")
+      +rse()
+   +cn-box()
+   section.sec-abi.ss-pd-t
+      .container 
+         .abi 
+            .abi-wrap
+               .abi-head.t-center
+                  +title("BẮT NGUỒN","TẠI GIẢNG ĐƯỜNG TOP ĐẦU THẾ GIỚI")
+               .abi-block
+                  .abi-body
+                     .abi-panel
+                        .abi-per.left
+                           span.t-name PHẠM ANH KHOA
+                           .t-des
+                              p
+                                 | Đồng sáng lập chủ tịch 
+                                 br
+                                 | hội đồng quản trị
+                           a.t-link(href="#")
+                              i.fa-light.fa-plus
+                        .abi-per.right
+                           span.t-name NGÔ THUỲ NGỌC TÚ
+                           .t-des
+                              p
+                                 | Đồng sáng lập chủ tịch 
+                                 br
+                                 | hội đồng quản trị
+                           a.t-link(href="#")
+                              i.fa-light.fa-plus
+                     .abi-pos 
+                        .abi-img.left 
+                           +img("per-img1.png")
+                        .abi-img.right
+                           +img("per-img2.png")
+   section.sec-abb
+      .abb-bg 
+         .is-pc.h-full
+            +img("bg-abb.jpg")
+         .is-mb.h-full 
+            +img("abb-bg-mb.jpg")
+      .container 
+         .abb 
+            .abb-wrap.c-white
+               .abb-head 
+                  .txt.mb-12 KHÁT VỌNG 
+                  h2.title THAY ĐỔI CUỘC SỐNG QUA GIÁO DỤC CHẤT LƯỢNG
+               .abb-body
+                  P 
+                     | YOLA xây dựng nền tảng giúp học viên tư duy bằng tiếng Anh, làm chủ kỹ năng học thuật và nuôi dưỡng khát khao tri thức.
+               a(href="" class="t-link") Xem thêm
+   section.sec-hnor.ss-pd
+      .container 
+         .hnor 
+            .hnor-wrap 
+               .hnor-head.t-center.mb-40 
+                  +title("THƯƠNG HIỆU GIÁO DỤC QUỐC GIA","VINH DANH TRONG & NGOÀI NƯỚC")
+               .hnor-body
+                  .hnor-slider.slideSw
+                     .b-sw.posi-rl 
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           each i,index in Array(5)
+                              .swiper-slide.col.col-4 
+                                 .hnor-it 
+                                    .b-img 
+                                       .inner 
+                                          +img("hnor.jpg")
+                                    .b-ctn 
+                                       span.t-name GIẢI THƯỞNG ĐẠT ĐƯỢC
+                                       .t-des 
+                                          p 
+                                             | Đơn vị đồng tài trợ chương trình Tuổi Hồng 27
+   section.sec-abv.ss-pd-b
+      .abv-dcor 
+         +img("abv-bg.png")
+      .container 
+         .abv 
+            .abv-wrap 
+               .abv-head.t-center.mb-40
+                  +title("16 NĂM 1 KHÁT VỌNG","THAY ĐỔI CUỘC SỐNG HỌC SINH VIỆT")
+               .abv-block 
+                  .abv-list.row 
+                     .col.col-4
+                        .abv-it 
+                           .t-head 
+                              span.t-num 2000+
+                              span.txt Tỷ đồng
+                           .t-body 
+                              .t-des 
+                                 p 
+                                    | Tổng giá trị học bổng được trao từ top 100 
+                                    br
+                                    | trường đại học Mỹ, Anh, Úc
+                              .b-gr 
+                                 .icon 
+                                    +img("snum-ic (1).svg")
+                                 .icon 
+                                    +img("snum-ic (2).svg")
+                                 .icon 
+                                    +img("snum-ic (3).svg")
+                     .col.col-4
+                        .abv-it 
+                           .t-head 
+                              span.t-num Hơn 90%
+                              span.txt học viên
+                           .t-body 
+                              .t-des 
+                                 p 
+                                    | Đạt điểm thi Cambride kỳ vọng
+                     .col.col-4
+                        .abv-it 
+                           .t-head 
+                              span.t-num 68.000+
+                              span.txt học viên
+                           .t-body 
+                              .t-des 
+                                 p 
+                                    | Đạt điểm đầu vào trường đại học Mỹ, Anh, Úc
+                     .col.col-4
+                        .abv-it 
+                           .t-head 
+                              span.t-num 1600+
+                              span.txt học viên
+                           .t-body 
+                              .t-des 
+                                 p 
+                                    | Đạt IELTS 6.0+
+                     .col.col-4
+                        .abv-it 
+                           .t-head 
+                              span.t-num 11.600
+                              span.txt học viên
+                           .t-body 
+                              .t-des 
+                                 p 
+                                    | IELTS 6.5+
+                     .col.col-4
+                        .abv-it 
+                           .t-head 
+                              span.t-num 5.878
+                              span.txt học viên
+                           .t-body 
+                              .t-des 
+                                 p 
+                                    | đạt IELTS 7.0+
+   section.sec-brd.ss-pd 
+      .brd-dc 
+         +img("brd-dc.png")
+      .container 
+         .brd 
+            .brd-wrap 
+               .brd-head
+                  +title("GIÁO TRÌNH NGHIÊN CỨU","CHUẨN CAMBRIDGE","center white")
+               .brd-block 
+                  .brd-slider.slideSwLogo
+                     .b-sw 
+                        +Swiper()
+                           each i,index in Array(2)
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (1).png")
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (2).png")
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (3).png")
+                     +pagination("brd-pagi")
+   +form()

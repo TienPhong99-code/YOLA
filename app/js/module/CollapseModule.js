@@ -74,4 +74,21 @@ export default function CollapseModule() {
       });
     });
   }
+
+  const arrowItem = document.querySelectorAll(".arrowItem");
+  arrowItem.forEach((item) => {
+    const arrowIcon = item.querySelector(".arrowIcon");
+    const arrowContent = item.querySelector(".arrowContent");
+    arrowIcon.addEventListener("click", () => {
+      if (item.classList.contains("active")) {
+        $(arrowContent).slideUp();
+        item.classList.remove("active");
+        arrowIcon.classList.remove("active");
+      } else {
+        $(arrowContent).slideDown();
+        item.classList.add("active");
+        arrowIcon.classList.add("active");
+      }
+    });
+  });
 }

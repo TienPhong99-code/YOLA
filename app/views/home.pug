@@ -28,46 +28,8 @@ block container
                               +img("bnh-img (1).jpg")
                            .is-mb.h-full
                               +img("bnh-img-mb (1).jpg")
-      .rse 
-         .container 
-            .rse-wrap 
-               .rse-text 
-                  span.txt Tìm khóa học theo độ tuổi và nhu cầu
-               .rse-panel 
-                  .rse-box.rse-old
-                     span.icon 
-                        +img("rse-old.svg")
-                     .b-select
-                        select(name="" data-placeholder="Độ tuổi").re-select-main.re-select-main-old
-                           option(value="") 
-                           option(value="7-12")  7- 12 tuổi
-                           option(value="13-18")  13- 18 tuổi
-                           option(value="19-25")  19- 25 tuổi
-                           option(value="26-35")  26- 35 tuổi
-                  .rse-box.rse-course
-                     span.icon 
-                        +img("rse-course.svg")
-                     .b-select 
-                        select(name="" data-placeholder="Chương trình học").re-select-main.re-select-main-course
-                           option(value="")
-                           option(value="tieng-anh-be")  Tiếng Anh cho bé
-                           option(value="tieng-anh-thieu-nien")  Tiếng Anh thiếu niên
-                           option(value="tieng-anh-ielts-sat")  Tiếng Anh luyện thi IELTS, SAT
-                  .rse-btn 
-                     +Btn("Tìm kiếm","button","second")
-               .rse-ic 
-                  +img("rse-ic.gif")
-   .cn-box.scroll-hide
-      .container  
-         .cn-box-wrap
-            .cn-box-item.iwt 
-               span.icon 
-                  +img("cn-box-ic (1).svg")
-               span.txt TƯ VẤN NGAY
-            .cn-box-item.iwt 
-               span.icon 
-                  +img("cn-box-ic (2).svg")
-               span.txt KHÓA HỌC
+      +rse()
+   +cn-box()
    section.sec-snum 
       .container
          .snum 

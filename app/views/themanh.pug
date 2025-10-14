@@ -1,0 +1,184 @@
+extends layout/layout
+
+block vars
+    -title = ''
+    -bodyClass = 'page-prio'
+
+block container
+   .bnh.bn-ab
+      .bnh-wrap 
+         .bnh-slider 
+            .b-sw 
+               +Swiper()
+                  .swiper-slide.col
+                     .bnh-item 
+                        .container 
+                           .b-content(data-aos="fade-left")
+                              .b-head
+                                 span.c-white.t20 YOLA KHÔNG CHỈ LÀ TRUNG TÂM ANH NGỮ TIẾNG ANH
+                                 .t-text 
+                                    | MÀ LÀ NƠI KHAI PHÓNG
+                                    br
+                                    | TIỀM NĂNG QUA NGÔN NGỮ
+                        .b-img
+                           .h-full
+                              +img("bn-themanh.jpg")
+      +rse()
+   +cn-box()
+   section.sec-abb
+      .abb-bg 
+         .is-pc.h-full
+            +img("bg-abb.jpg")
+         .is-mb.h-full 
+            +img("abb-bg-mb.jpg")
+      .container 
+         .abb 
+            .abb-wrap.c-white
+               .abb-head 
+                  .txt.mb-12 KHÁT VỌNG 
+                  h2.title THAY ĐỔI CUỘC SỐNG QUA GIÁO DỤC CHẤT LƯỢNG
+               .abb-body
+                  P 
+                     | YOLA xây dựng nền tảng giúp học viên tư duy bằng tiếng Anh, làm chủ kỹ năng học thuật và nuôi dưỡng khát khao tri thức.
+               a(href="" class="t-link") Xem thêm
+   section.sec-step.ss-pd 
+      .container 
+         .step 
+            .step-wrap 
+               .step-head.t-center
+                  +title("HÀNH TRÌNH GIÁO DỤC","ĐƯỢC NGHIÊN CỨU BÀI BẢN QUA TỪNG ĐỘ TUỔI")
+      .step-body 
+         .step-img
+            .is-pc
+               +img("step-img.png")
+            .is-mb
+               +img("step-img-mb.png")
+   section.sec-csv.ss-pd-b 
+      .container 
+         .csv 
+            .csv-wrap 
+               .csv-head.t-center.mb-40
+                  +title("TỰ HÀO LÀ TRUNG TÂM ANH NGỮ","ĐƯỢC HỌC VIÊN ĐỒNG HÀNH LÂU DÂI NHẤT")
+                  .t-des.mt-24
+                     p 
+                        | Từ mầm non tới trưởng thành, phụ huynh học viên chọn YOLA như một người đồng hành đáng tin cậy 
+                        br
+                        | xuyên suốt hơn 20 khoá học.
+               .csv-block 
+                  .csv-slider.slideSw 
+                     .b-sw.posi-rl 
+                        +SwiperControl("posi midle")
+                        +Swiper()
+                           each i,index in Array(6)
+                              .swiper-slide.col.col-4 
+                                 .csv-it 
+                                    .b-inner
+                                       .b-bg 
+                                          +img("csv-bg.png")
+                                       .b-img 
+                                          +img("csv-img.png")
+                                       .b-pos 
+                                          .t-name BÙI BẢO NGỌC
+                                          .t-des 
+                                             p 
+                                                | Đã học 10 khóa tại Yola
+   +card-gv()
+   section.sec-brd.ss-pd 
+      .brd-dc 
+         +img("brd-dc.png")
+      .container 
+         .brd 
+            .brd-wrap 
+               .brd-head
+                  +title("GIÁO TRÌNH NGHIÊN CỨU","CHUẨN CAMBRIDGE","center white")
+               .brd-block 
+                  .brd-slider.slideSwLogo
+                     .b-sw 
+                        +Swiper()
+                           each i,index in Array(2)
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (1).png")
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (2).png")
+                              .swiper-slide.col 
+                                 .brd-item
+                                    +img("brd-img (3).png")
+                     +pagination("brd-pagi")
+   section.sec-ape.ss-pd-b 
+      .container 
+         .ape 
+            .ape-wrap 
+               .ape-head.t-center.mb-40
+                  +title("VỚI SỰ HỖ TRỢ CỦA CÔNG NGHỆ","TRONG APP HỌC CÁ NHÂN HOÁ & BÁO CÁO TỰ ĐỘNG")
+               .ape-block 
+                  .ape-slider 
+                     .b-sw 
+                        +Swiper 
+                           .swiper-slide.col.col-4
+                              .csv-it 
+                                 .b-inner
+                                    .b-bg 
+                                       //- +img("csv-bg.png")
+                                    .b-img 
+                                       //- +img("csv-img.png")
+                                    .b-pos 
+                                       .t-name YOLA AI SPEAKING LAB
+                                       .t-des 
+                                          p 
+                                             | Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                           .swiper-slide.col.col-4
+                              .csv-it 
+                                 .b-inner
+                                    .b-bg 
+                                       //- +img("csv-bg.png")
+                                    .b-img 
+                                       //- +img("csv-img.png")
+                                    .b-pos 
+                                       .t-name YOLA LEARNING
+                                       .t-des 
+                                          p 
+                                             | Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                           .swiper-slide.col.col-4
+                              .csv-it 
+                                 .b-inner
+                                    .b-bg 
+                                       //- +img("csv-bg.png")
+                                    .b-img 
+                                       //- +img("csv-img.png")
+                                    .b-pos 
+                                       .t-name ZALO BÁO CÁO TỰ ĐỘNG
+                                       .t-des 
+                                          p 
+                                             | Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+   section.sec-sfb.ss-pd-b 
+      .container 
+         .sfb 
+            .sfb-wrap 
+               .sfb-head.t-center.mb-40
+                  +title("GẶT HÁI TOÀN BỘ","CỦA HƠN 68K HỌC VIÊN")
+               .sfb-block
+                  .sfb-img 
+                     +img("sfb-img.png")
+                  .sfb-slider.slideFade
+                     .b-sw.posi-rl
+                        +SwiperControl("sfb-control")
+                        +Swiper()
+                           each i,index in Array(3)
+                              .swiper-slide.col
+                                 .sfb-it 
+                                    .col-left
+                                       .b-inner 
+                                          .b-head 
+                                             +Star("100%")
+                                             .t-des 
+                                                p 
+                                                   | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                                          .b-bot 
+                                             span.t-name NGUYỄN THỊ B #{index+1}
+                                             span.txt Du học sinh
+                                    .col-right
+                                       .b-img 
+                                          .inner-img 
+                                             +img("sfb-person.png")

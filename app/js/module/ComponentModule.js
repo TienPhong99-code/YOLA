@@ -28,7 +28,7 @@ export default function ComponentModule() {
       }
     });
   });
-    let speedGrids = [];
+  let speedGrids = [];
   const gridWidth = document.querySelectorAll(".slideJs");
   function getWidthGrid() {
     document.querySelectorAll(".getHeightGrid").forEach((e, s) => {
@@ -79,16 +79,20 @@ export default function ComponentModule() {
   if ($eniList.length) {
     $eniList.each(function (idx) {
       const $des = $(this).find(".box-des");
+      const $img = $(this).find(".box-img");
       if (idx === 0) {
         $(this).addClass("open");
-        //   $des.show();
+        $des.show();
+        $img.show();
       } else {
-        //   $des.hide();
+        $des.hide();
+        $img.hide();
       }
       $(this).on("click", function () {
         $eniList.removeClass("open");
         $(this).addClass("open");
-        //   $des.stop(true, true).slideDown(300);
+        $des.stop(true, true).slideToggle(600);
+        $img.stop(true, true).slideToggle(600);
       });
     });
   }
@@ -99,15 +103,17 @@ export default function ComponentModule() {
     const hash = window.location.hash;
     if ($(hash).length) scrollToID(hash, speed);
 
-    const href = $(this).find("> a").attr("href") || $(this).attr("href");
-    if (href) {
+    $(".clickToSection").on("click", function (e) {
+      e.preventDefault();
+
+      const href = $(this).find("> a").attr("href") || $(this).attr("href");
       const id = href.slice(href.lastIndexOf("#"));
       if ($(id).length) {
         scrollToID(id, speed);
       } else {
         window.location.href = href;
       }
-    }
+    });
 
     function scrollToID(id, speed) {
       const offSet = $(".hd").outerHeight();
@@ -132,7 +138,7 @@ export default function ComponentModule() {
       }
     });
   });
- 
+
   //   Readmore
   const readJS = document.querySelector(".readJS");
   if (!readJS) return;

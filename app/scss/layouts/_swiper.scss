@@ -86,7 +86,7 @@
     width: var(--size);
     height: var(--size);
     border-radius: 100rem;
-    background-color: var(--color-sec);
+    background-color: rgba(39, 44, 51, 0.7);
     @include mid-flex;
     cursor: pointer;
     @include transitionRe;
@@ -94,14 +94,14 @@
     position: relative;
     overflow: hidden;
     color: var(--color-white);
-    @include affter(var(--color-pri));
+    @include affter(#31333b);
     > * {
       position: relative;
       z-index: 2;
     }
 
     &.swiper-button-disabled {
-      background-color: rgba(67, 69, 76, 0.6);
+      background-color: rgba(39, 44, 51, 0.7);
       cursor: default;
       box-shadow: none;
     }

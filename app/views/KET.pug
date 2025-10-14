@@ -14,7 +14,7 @@ block container
                      .bnh-item
                         .b-img
                            .h-full
-                              +img("bn-ket.jpg")
+                              video(src="./assets/images/demo.mp4" autoplay muted loop playsinline) 
                         .container 
                            .b-content(data-aos="fade-left")
                               .b-head
@@ -97,92 +97,72 @@ block container
          .int 
             .int-wrap 
                .int-head.t-center.mb-40
-                  +title("CHỈ CÓ Ở YOLA","GIÁ TRỊ GIÁO DỤC & KIẾN THỨC VƯỢT NGOÀI ĐIỂM THI")
-               .int-block 
-                  .int-slider.slideSw 
-                     .b-sw.posi-rl 
+                  +title("NỘI DUNG","CHƯƠNG TRÌNH QUỐC TẾ RÈN TƯ DUY & KỸ NĂNG")
+               .int-block
+                  .int-slider.slidePc
+                     .b-sw.posi-rl
                         +SwiperControl("posi midle")
                         +Swiper()
                            .swiper-slide.col.col-6 
-                              .int-it 
-                                 a(href="").hidden-link 
-                                 .b-inner 
-                                    .b-img
-                                       +img("int-img1.jpg")
-                                    .b-ctn 
-                                       h3.t-text 
-                                          | KHỞI TRÍ TÒ MÒ
-                                       .t-des 
-                                          p 
-                                             | Bắt đầu cùng trò chơi hỏi–đáp, bé luyện phản xạ nghe–nói với từ vựng và câu đơn giản
-                                          p  Bé tự tin giới thiệu sở thích và vui học qua tương tác tự nhiên
+                              .int-it.arrowItem
+                                 .int-inner
+                                    .b-inner 
+                                       .b-img
+                                          +img("int-img1.jpg")
+                                       .b-ctn 
+                                          .t-head
+                                             h3.t-text 
+                                                | KHỞI TRÍ TÒ MÒ
+                                             span.icon.arrowIcon
+                                                i.fa-light.fa-chevron-down
+                                          .t-des.arrowContent
+                                             p 
+                                                | Bắt đầu cùng trò chơi hỏi–đáp, bé luyện phản xạ nghe–nói với từ vựng và câu đơn giản
+                                             p  Bé tự tin giới thiệu sở thích và vui học qua tương tác tự nhiên
+                                    .b-btn
+                                       +Btn("Kiểm tra trình độ miễn phí","","")
                            .swiper-slide.col.col-6 
-                              .int-it 
-                                 .b-inner 
-                                    .b-img
-                                       +img("int-img2.jpg")
-                                    .b-ctn 
-                                       h3.t-text 
-                                          | HỌC NGÔN NGỮ QUA ĐA MÔN & DỰ ÁN
-                                       .t-des
-                                          P 
-                                             | Bé vừa chơi vừa học qua dự án đa lĩnh vực:
-                                          P  
-                                             | Tiếng Anh Cambridge, Lãnh đạo, Công nghệ và Thiết kế.
-                                          P 
-                                             | Hoạt động muôn màu giúp bé phát triển ngôn ngữ, tư duy, công nghệ và sáng tạo.
+                              .int-it.arrowItem
+                                 .int-inner
+                                    .b-inner 
+                                       .b-img
+                                          +img("int-img2.jpg")
+                                       .b-ctn 
+                                          .t-head
+                                             h3.t-text 
+                                                | HỌC NGÔN NGỮ QUA ĐA MÔN & DỰ ÁN
+                                             span.icon.arrowIcon
+                                                i.fa-light.fa-chevron-down
+                                          .t-des.arrowContent
+                                             P 
+                                                | Bé vừa chơi vừa học qua dự án đa lĩnh vực:
+                                             P  
+                                                | Tiếng Anh Cambridge, Lãnh đạo, Công nghệ và Thiết kế.
+                                             P 
+                                                | Hoạt động muôn màu giúp bé phát triển ngôn ngữ, tư duy, công nghệ và sáng tạo.
+                                    .b-btn
+                                       +Btn("Kiểm tra trình độ miễn phí","","")
                            .swiper-slide.col.col-6 
-                              .int-it 
-                                 .b-inner 
-                                    .b-img
-                                       +img("int-img3.jpg")
-                                    .b-ctn 
-                                       h3.t-text 
-                                          | CHIA SẺ & HOÀ NHẬP
-                                       .t-des
-                                          P
-                                             | Bé chia sẻ ý tưởng, hợp tác với bạn và giữ lớp sạch sẽ. Hoạt động vui học này giúp bé nhanh hòa nhập, cùng bạn hợp tác cùng nhau vui chơi.
-                  .mt-24 
+                              .int-it.arrowItem
+                                 .int-inner
+                                    .b-inner 
+                                       .b-img
+                                          +img("int-img3.jpg")
+                                       .b-ctn 
+                                          .t-head
+                                             h3.t-text 
+                                                | CHIA SẺ & HOÀ NHẬP
+                                             span.icon.arrowIcon
+                                                i.fa-light.fa-chevron-down
+                                          .t-des.arrowContent
+                                             P
+                                                | Bé chia sẻ ý tưởng, hợp tác với bạn và giữ lớp sạch sẽ. Hoạt động vui học này giúp bé nhanh hòa nhập, cùng bạn hợp tác cùng nhau vui chơi.
+                                    .b-btn
+                                       +Btn("Kiểm tra trình độ miễn phí","","")
+                  .mt-24.btn-pc
                      +Btn("Kiểm tra trình độ miễn phí","","center")
-   section.sec-taf.ss-pd-b 
-      .container 
-         .taf 
-            .taf-wrap 
-               .taf-head.t-center.mb-40
-                  +title("LỊCH KHÓA HỌC","KHOÁ FLYERS")
-               .taf-block 
-                  .taf-table
-                     table.table-custom
-                        thead
-                           tr 
-                              th
-                                 | CHI NHÁNH
-                              th
-                                 | KHAI GIẢNG
-                              th
-                                 | SỐ LƯỢNG HV
-                              th
-                                 | ĐỊA CHỈ
-                              th 
-                                 | BUỔI HỌC
-                              th 
-                                 | GIỜ HỌC
-                        tbody 
-                           each i,index in Array(7)
-                              tr 
-                                 td(data-text="CHI NHÁNH:") Đỗ Xuân Hợp
-                                 td(data-text="KHAI GIẢNG:") 
-                                    | 26/08/2025
-                                 td(data-text="Số LƯỢNG HV:") 
-                                    span.b-tag.b-live Còn chỗ
-                                 td(data-text="ĐỊA CHỈ:")  
-                                    span 299B Đỗ Xuân Hợp, Phường Phước Long B, TP. Thủ Đức, TP. Hồ Chí Minh
-                                 td(data-text="BUỔI HỌC:") 
-                                    span Thứ 3/5/7
-                                 td(data-text="GIỜ HỌC:") 
-                                    span 19:30 - 21:30
-   +faq()
-   section.sec-dkf.ss-pd
+   +table("LỊCH KHÓA HỌC","KHOÁ FLYERS")
+   section.sec-dkf.ss-pd#sec-form
       .container 
          .dkf 
             .dkf-wrap 
@@ -223,4 +203,5 @@ block container
                            .b-submit 
                               +Btn("Gửi yêu cầu","button","full")
    +card-sv()
+   +faq()
    +form()

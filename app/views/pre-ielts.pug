@@ -14,7 +14,7 @@ block container
                      .bnh-item
                         .b-img
                            .h-full
-                              +img("bn-pre.jpg")
+                              video(src="./assets/images/demo.mp4" autoplay muted loop playsinline) 
                         .container 
                            .b-content(data-aos="fade-left")
                               .b-head
@@ -25,6 +25,8 @@ block container
                                     | TƯ DUY TIẾNG ANH HỌC THUẬT
                               .b-btn
                                  +Btn("Đăng ký học thử miễn phí")
+                        a(href="https://youtu.be/oAwkmleUz6g?si=ePCLyGAiW2FKKjJe" data-fancybox).b-play 
+                           +img("ic-play2.svg")
       +rse()
    +cn-box()
    .se-box.barJsFixed
@@ -38,7 +40,7 @@ block container
                a(href="").b-tag  IELTS 7.0+
                a(href="").b-tag IELTS WRITING CẤP TỐC
                a(href="").b-tag IELTS SPEAKING CẤP TỐC
-   section.sec-afc.ss-pd 
+   section.sec-afc.ss-pd-b
       .container 
          .afc
             .afc-wrap 
@@ -82,96 +84,244 @@ block container
                   +title("CHỈ CÓ Ở YOLA","GIÁ TRỊ GIÁO DỤC & KIẾN THỨC VƯỢT NGOÀI ĐIỂM THI")
                .vle-block.collapse-block
                   .vle-list 
-                     -
-                        var arrs = [
-                           {
-                              txt:"Buổi Reading"
-                           },
-                           {
-                              txt:"Buổi Writing"
-                           },
-                           {
-                              txt:"Buổi Speaking"
-                           },
-                           {
-                              txt:"Buổi Listening"
-                           },
-                        ]
-                     each i,index in arrs
-                        .vle-it.collapse-item
-                           .b-head.collapse-head
-                              h3.txt.t20.fw-7 #{i.txt}
-                              span.icon 
-                                 i.fa-light.fa-chevron-down
-                           .b-body.collapse-body
-                              .mona-content 
-                                 ul 
-                                    li 
-                                       | Đoán ý chính 
-                                    li 
-                                       | Đoán nghĩa từ dựa trên ngữ cảnh
-                                    li 
-                                       | Đọc lướt để lấy ý chung
-                              .b-ctn 
-                                 .c-text.fw-7.mb-16 NỘI DUNG KHÓA HỌC
-                                 .b-list.cl-small
-                                    .b-item.cl-items
-                                       .t-head.cl-heads
-                                          span.t-txt.fw-7.c-text TITLE DEMO 
-                                          span.icon 
-                                             i.fa-light.fa-chevron-down
-                                       .t-des.cl-bodies
-                                          p 
-                                             | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                    .b-item 
-                                       .t-head.cl-heads
-                                          span.t-txt.fw-7.c-text TITLE DEMO 
-                                          span.icon 
-                                             i.fa-light.fa-chevron-down
-                                       .t-des.cl-bodies
-                                          p 
-                                             | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
-                           .b-btn 
-                              +Btn("Kiểm tra trình độ miễn phí","","center")
-   section.sec-taf.ss-pd-b 
-      .container 
-         .taf 
-            .taf-wrap 
-               .taf-head.t-center.mb-40
-                  +title("LỊCH KHÓA HỌC","KHÓA PRE IELTS FOUNDATION")
-               .taf-block 
-                  .taf-table 
-                     table.table-custom
-                        thead
-                           tr 
-                              th
-                                 | CHI NHÁNH
-                              th
-                                 | KHAI GIẢNG
-                              th
-                                 | SỐ LƯỢNG HV
-                              th
-                                 | ĐỊA CHỈ
-                              th 
-                                 | BUỔI HỌC
-                              th 
-                                 | GIỜ HỌC
-                        tbody 
-                           each i,index in Array(7)
-                              tr 
-                                 td(data-text="CHI NHÁNH:") Đỗ Xuân Hợp
-                                 td(data-text="KHAI GIẢNG:") 
-                                    | 26/08/2025
-                                 td(data-text="Số LƯỢNG HV:") 
-                                    span.b-tag.b-live Còn chỗ
-                                 td(data-text="ĐỊA CHỈ:")  
-                                    span 299B Đỗ Xuân Hợp, Phường Phước Long B, TP. Thủ Đức, TP. Hồ Chí Minh
-                                 td(data-text="BUỔI HỌC:") 
-                                    span Thứ 3/5/7
-                                 td(data-text="GIỜ HỌC:") 
-                                    span 19:30 - 21:30
-   +faq()
-   section.sec-dkf.ss-pd
+                     .vle-it.collapse-item
+                        .b-head.collapse-head
+                           h3.txt.t20.fw-7 Buổi Reading
+                           span.icon 
+                              i.fa-light.fa-chevron-down
+                        .b-body.collapse-body
+                           .mona-content 
+                              p Xây dựng các kỹ năng đọc cơ bản trong đọc học thuật như nắm bắt ý chính, tìm từ khoá, phân biệt trạng từ,..
+                           .b-ctn 
+                              .c-text.fw-7.mb-16 NỘI DUNG KHÓA HỌC
+                              .b-list.cl-small
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Kỹ năng đọc học thuật
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul 
+                                             li 
+                                                | Tìm thông tin từ tài liệu
+                                             li 
+                                                | Đọc quét để tìm thông tin cụ thể
+                                             li 
+                                                | Hiểu các chi tiết cụ thể
+                                             li 
+                                                | Hiểu trạng từ chỉ tần suất
+                                             li 
+                                                | Đọc hiểu thông tin phức tạp
+                                             li 
+                                                | Rút ra suy luận
+                                 .b-item 
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Từ vựng
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content 
+                                          ul 
+                                             li 
+                                                | Các địa danh quanh ta
+                                             li 
+                                                | Các đồ vật quanh ta
+                                             li 
+                                                | Đời sống hằng ngày
+                                             li 
+                                                | Sở thích cá nhân
+                                             li 
+                                                | Thói quen ăn uống
+                                             li 
+                                                | Tiểu sử
+                                             li 
+                                                | Các hoạt động giải trí
+                                             li 
+                                                | Công nghệ truyền thông
+                                 .b-item 
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Mẫu bài tập
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content 
+                                          ul 
+                                             li
+                                                |  Sơ yếu lý lịch nhân viên
+                                             li 
+                                                | Miêu tả gia phả của 1 người nổi tiếng
+                                             li 
+                                                | Bài báo về những người thành công
+                                             li 
+                                                | Bài giới thiệu ngắn về 1 số nhân vật
+                                             li 
+                                                | Câu đố về du lịch thế giới
+                                             li 
+                                                | Bài báo về các chế độ ăn lành mạnh trên toàn thế giới
+                                             li 
+                                                | Đoạn trích từ 1 cuốn tiểu sử
+                                             li 
+                                                | Một vài sự thật về nữ hoàng Ai Cập - Cleopatra
+                                             li 
+                                                | Bài báo về các phương tiện giao tiếp hiện đại
+                        .b-btn 
+                           +Btn("Kiểm tra trình độ miễn phí","","center")
+                     .vle-it.collapse-item
+                        .b-head.collapse-head
+                           h3.txt.t20.fw-7 Buổi Listening
+                           span.icon 
+                              i.fa-light.fa-chevron-down
+                        .b-body.collapse-body
+                           .mona-content 
+                              ul 
+                                 li 
+                                    | Làm quen với nghe cuộc hội thoại hằng ngày
+                                 li 
+                                    | Nắm bắt nhịp độ nghe
+                           .b-ctn 
+                              .c-text.fw-7.mb-16 NỘI DUNG KHÓA HỌC
+                              .b-list.cl-small
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Kỹ năng đọc học thuật
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul 
+                                             li Nghe để nhận biết tên các quốc gia và quốc tịch
+                                             li Nghe để lấy thông tin chi tiết
+                                             li Nghe để nhận biết các cụm từ chỉ thời gian
+                                             li Xác định ý chính
+                                             li Xác định trình tự sự kiện
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Từ vựng
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul 
+                                             li Các địa danh quanh ta
+                                             li Các đồ vật quanh ta
+                                             li Đời sống hằng ngày
+                                             li Sở thích cá nhân
+                                             li Thói quen ăn uống
+                                             li Tiểu sử
+                                             li Các hoạt động giải trí
+                                             li Công nghệ truyền thông
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Mẫu bài tập
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul 
+                                             li Bài kiểm tra kiến thức về các quốc gia, ngôn ngữ và dân tộc
+                                             li Bài nói về những người bạn yêu thích
+                                             li Bài nói về cuộc sống trên một hòn đảo Scotland
+                                             li Chương trình podcast về ca sĩ người Anh - Adele
+                                             li Khảo sát về phương tiện vận chuyển
+                                             li Cuộc trò chuyện về các địa điểm ưa thích để ăn
+                                             li Bài nói về cuộc đời của Đệ nhất phu nhân Hoa Kỳ - Jackie Kennedy Onassis
+                                             li Chương trình radio về một vở nhạc kịch
+                                             li Buổi nói chuyện ngắn về trang phục của mọi người tại nơi làm việc
+                        .b-btn 
+                           +Btn("Kiểm tra trình độ miễn phí","","center")
+                     .vle-it.collapse-item
+                        .b-head.collapse-head
+                           h3.txt.t20.fw-7 Buổi Speaking
+                           span.icon 
+                              i.fa-light.fa-chevron-down
+                        .b-body.collapse-body
+                           .mona-content 
+                              ul 
+                                 li 
+                                    | Xây dựng khả năng xử lý các tình huống thường nhật bằng tiếng Anh tự nhiên
+                           .b-ctn 
+                              .c-text.fw-7.mb-16 NỘI DUNG KHÓA HỌC
+                              .b-list.cl-small
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Kỹ năng đọc học thuật
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul
+                                             li Chào hỏi
+                                             li Chia sẻ cá nhân: quê quán, sở thích, gia đình, công việc, vật dụng,..
+                                             li Sử dụng sở hữu cách trong văn nói
+                                             li Miêu tả: cuộc sống ở nơi chốn, tính cách, ngoại hình, trang phục,..
+                                             li Đưa ra ý kiến cá nhân: bày tỏ sự đồng ý/không đồng ý,.. 
+                                             li Hỏi trả lời câu hỏi: mua sắm hàng hoá, đặt hẹn,..
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Từ vựng
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul
+                                             li Các địa danh quanh ta
+                                             li Các đồ vật quanh ta
+                                             li Đời sống hằng ngày
+                                             li Sở thích cá nhân
+                                             li Thói quen ăn uống
+                                             li Tiểu sử
+                                             li Các hoạt động giải trí
+                                             li Công nghệ truyền thông
+                        .b-btn 
+                           +Btn("Kiểm tra trình độ miễn phí","","center")
+                     .vle-it.collapse-item
+                        .b-head.collapse-head
+                           h3.txt.t20.fw-7 Buổi Writing
+                           span.icon 
+                              i.fa-light.fa-chevron-down
+                        .b-body.collapse-body
+                           .mona-content 
+                              ul 
+                                 li 
+                                    | Viết đúng các câu chính trong tiếng Anh
+                                 li 
+                                    | Nắm các thì chính: hiện tại đơn, quá khứ đơn, hiện tại tiếp diễn,..
+                           .b-ctn 
+                              .c-text.fw-7.mb-16 NỘI DUNG KHÓA HỌC
+                              .b-list.cl-small
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Kỹ năng đọc học thuật
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul
+                                             li Viết câu miêu tả người 
+                                             li Viết câu miêu tả nơi chốn
+                                             li Viết thư/ tin nhắn/ email ngắn trong một số tình huống xã giao thông thường
+                                 .b-item.cl-items
+                                    .t-head.cl-heads
+                                       span.t-txt.fw-7.c-text Ngữ pháp
+                                       span.icon 
+                                          i.fa-light.fa-chevron-down
+                                    .t-des.cl-bodies
+                                       .mona-content
+                                          ul
+                                             li Thì hiện tại đơn
+                                             li Thì hiện tại tiếp diễn
+                                             li Thì hiện tại hoàn thành
+                                             li Thì quá khứ đơn
+                                             li Từ hạn định chỉ khoảng cách
+                                             li Sở hữu cách
+                                             li Động từ khiếm khuyết
+                                             li Mạo từ
+                                             li Lượng từ
+                        .b-btn 
+                           +Btn("Kiểm tra trình độ miễn phí","","center")
+   +table("LỊCH KHÓA HỌC","KHÓA PRE IELTS FOUNDATION")
+   section.sec-dkf.ss-pd#sec-form
       .container 
          .dkf 
             .dkf-wrap 
@@ -212,4 +362,5 @@ block container
                            .b-submit 
                               +Btn("Gửi yêu cầu","button","full")
    +card-sv()
+   +faq()
    +form()

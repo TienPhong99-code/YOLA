@@ -118,11 +118,11 @@ export default function SwiperModule() {
       const next = item.querySelector(".swiper-next");
       const prev = item.querySelector(".swiper-prev");
 
-      // Helper: gán slide-left/slide-right + left-3/right-3 + is-active
+    
       const applyMarkers = (swiper) => {
-        const slides = swiper.slides; // NodeList các .swiper-slide (kể cả duplicate khi loop)
+        const slides = swiper.slides; 
         const n = slides.length;
-        const a = swiper.activeIndex; // index theo DOM hiện tại
+        const a = swiper.activeIndex; 
         if (!n) return;
 
         // reset
@@ -136,18 +136,18 @@ export default function SwiperModule() {
           );
         });
 
-        // active
+      
         const active = slides[a];
         if (active) active.classList.add("is-active");
 
-        // hàm tính khoảng cách vòng tròn ngắn nhất i -> a
+       
         const delta = (i, a, n) => {
-          let d = (i - a + n) % n; // [0..n-1]
-          if (d > n / 2) d -= n; // -> (-n/2..n/2]
-          return d; // âm: bên trái, dương: bên phải
+          let d = (i - a + n) % n; 
+          if (d > n / 2) d -= n; 
+          return d; 
         };
 
-        // gán class trái/phải + đánh dấu phần tử thứ 3 mỗi phía
+      
         let left3Idx = null,
           right3Idx = null;
 
@@ -174,7 +174,6 @@ export default function SwiperModule() {
         initialSlide: 0,
         effect: "slide",
 
-        // defaults (ghi đè bởi breakpoints)
         loop: false,
         centeredSlides: false,
 
@@ -187,7 +186,7 @@ export default function SwiperModule() {
           },
           501: {
             loop: true,
-            centeredSlides: true, // active ở giữa
+            centeredSlides: true,
           },
         },
 
@@ -196,9 +195,9 @@ export default function SwiperModule() {
 
         on: {
           init: applyMarkers,
-          slideChange: applyMarkers, // đổi index
-          slideChangeTransitionEnd: applyMarkers, // sau animation
-          resize: applyMarkers, // khi đổi viewport
+          slideChange: applyMarkers, 
+          slideChangeTransitionEnd: applyMarkers, 
+          resize: applyMarkers,
         },
       });
     });

@@ -385,3 +385,139 @@ mixin news(index)
             .t-des
                p 
                   | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+mixin table(txt,title)
+   section.sec-taf
+      .container 
+         .taf 
+            .taf-wrap 
+               .taf-head.t-center.mb-40
+                  +title(txt,title)
+               .taf-block 
+                  .taf-table
+                     table.table-custom
+                        thead
+                           tr 
+                              th
+                                 | CHI NHÁNH
+                              th
+                                 | KHAI GIẢNG
+                              th
+                                 | SỐ LƯỢNG HV
+                              th
+                                 | ĐỊA CHỈ
+                              th 
+                                 | BUỔI HỌC
+                              th 
+                                 | GIỜ HỌC
+                        tbody 
+                           each i,index in Array(7)
+                              tr 
+                                 td(data-text="CHI NHÁNH:") Đỗ Xuân Hợp
+                                 td(data-text="KHAI GIẢNG:") 
+                                    | 26/08/2025
+                                 td(data-text="Số LƯỢNG HV:") 
+                                    a(href="#sec-form").b-tag.b-live.clickToSection Còn chỗ
+                                 td(data-text="ĐỊA CHỈ:")  
+                                    span 299B Đỗ Xuân Hợp, Phường Phước Long B, TP. Thủ Đức, TP. Hồ Chí Minh
+                                 td(data-text="BUỔI HỌC:") 
+                                    span Thứ 3/5/7
+                                 td(data-text="GIỜ HỌC:") 
+                                    span 19:30 - 21:30
+                  .taf-mb.arrowGroup
+                     .taf-mb-head
+                        .t-head CHI NHÁNH
+                        .t-head KHÁI GIẢNG
+                        .t-head SỐ LƯỢNG HV
+                     .taf-mb-body 
+                        .taf-mb-list 
+                           each i,index in Array(4)
+                              .taf-mb-it.arrowItem
+                                 .t-col
+                                    span.txt Đỗ Xuân Hợp
+                                 .t-col 
+                                    span.txt 26/08/2025
+                                 .t-col
+                                    .d-flex.j-bw.a-center
+                                       a(href="#sec-form").b-tag.b-live.clickToSection Còn chỗ
+                                       .icon-arrow.arrowIcon
+                                          i.fa-light.fa-chevron-down
+                                 .t-col
+                                    .toggle-content.arrowContent
+                                       .b-group
+                                          .col-mid
+                                             .iwt 
+                                                span.icon 
+                                                   +img("ic-lc.svg")
+                                                .t-gr.c-text
+                                                   span.txt Địa chỉ:
+                                                   span.txt.fw-7 299B Đỗ Xuân Hợp, Phường Phước Long B, TP. Thủ Đức, TP. Hồ Chí Minh
+                                          .col-mid
+                                             .d-flex.d-col
+                                                .iwt 
+                                                   span.icon 
+                                                      +img("ic-date2.svg")
+                                                   .t-gr.c-text
+                                                      span.txt Buổi học:
+                                                      span.txt.fw-7 Thứ 3/5/7
+                                                .iwt 
+                                                   span.icon 
+                                                      +img("ic-time.svg")
+                                                   .t-gr.c-text
+                                                      span.txt Giờ học:
+                                                      span.txt.fw-7 19:30 - 21:30
+mixin form-dk(title)
+   section.sec-dkf.ss-pd#sec-form
+      .container 
+         .dkf 
+            .dkf-wrap 
+               .dkf-row.row 
+                  .col.col-6
+                     .dkf-panel 
+                        .t-head 
+                           +title("",title)
+                        .t-des 
+                           p 
+                              | Bạn không tìm thấy lịch phù hợp với bạn ?
+                           p 
+                              | Hãy chọn ngay cho chính bạn 1 lịch phù hợp
+                  .col.col-6
+                     .dkf-form 
+                        form(action="")
+                           .form-list.row 
+                              .col.form-ip 
+                                 input(type="text" placeholder="Tên của bạn")
+                              .col.form-ip 
+                                 input(type="text" placeholder="Số điện thoại")
+                              .col.form-ip 
+                                 .b-select 
+                                    select(name="" data-placeholder="Chọn trình độ").re-select-main
+                                       option(value="")
+                                       option(value="") Demo
+                                       option(value="") Demo
+                              .col.form-ip 
+                                 .b-select 
+                                    select(name="" data-placeholder="Chọn địa điểm").re-select-main
+                                       option(value="")
+                                       option(value="") Demo
+                                       option(value="") Demo
+                              .col.form-ip 
+                                 input(type="text" placeholder="Nhập ca học (VD: 08:00 - 07:00)")
+                              .col.form-ip 
+                                 input(type="text" placeholder="Nhập buổi học (VD: thứ 2-4-6")
+                           .b-submit 
+                              +Btn("Gửi yêu cầu","button","full")
+mixin Star(per)
+  .star
+    .star-list
+      .star-flex.star-empty
+        i.fa-regular.fa-star
+        i.fa-regular.fa-star
+        i.fa-regular.fa-star
+        i.fa-regular.fa-star
+        i.fa-regular.fa-star
+      .star-flex.star-filter(style="width:"+per)
+        i.fa-solid.fa-star
+        i.fa-solid.fa-star
+        i.fa-solid.fa-star
+        i.fa-solid.fa-star
+        i.fa-solid.fa-star

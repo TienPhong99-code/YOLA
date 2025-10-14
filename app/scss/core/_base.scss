@@ -62,6 +62,7 @@ textarea {
   position: relative;
   z-index: 1;
   padding-top: var(--size-hd);
+  overflow: hidden;
 }
 
 .container {

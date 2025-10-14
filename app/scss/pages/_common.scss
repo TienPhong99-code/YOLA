@@ -20,15 +20,22 @@
     }
     .b-dcor .inner-dc {
       left: 47%;
+      top: 5%;
     }
   }
 }
 .page-pre {
   --bg-table: #eef6fe;
+  --bg-table-mb: #eef6fe;
+  --bg-table-gr: #b9d8f9;
+
   --bg-form: #bbdafb;
 }
 .page-class {
   --bg-table: #fde680;
+  --bg-table-mb: #fff;
+  --bg-table-gr: #fde680;
+
   --bg-form: #fde680;
   background: #fffbd0;
   --bg-rsult-it: #fde680;
@@ -39,6 +46,8 @@
 }
 .page-ket {
   background: #f3d1ec;
+  --bg-table-mb: #fff;
+  --bg-table-gr: #e6dffe;
   --bg-rsult-it: #edd9ff;
   --bg-int-it: #edd9ff;
   --bg-table: #edd9ff;
@@ -109,15 +118,7 @@
   &:last-child {
     border-radius: var(--rs);
   }
-  &.open {
-    pointer-events: none;
-    .box-img {
-      display: block;
-    }
-    .box-des {
-      display: block;
-    }
-  }
+
   &:nth-child(1) {
     --bg: #f2eb94;
   }
@@ -143,12 +144,12 @@
     }
   }
   .box-left {
-    max-width: 50%;
+    max-width: 60%;
     color: var(--color-text);
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
     padding: 2% 4%;
+    padding-right: 0;
     justify-content: center;
     @include max(768px) {
       max-width: 40rem;
@@ -173,7 +174,7 @@
     }
   }
   .box-img {
-    width: 45%;
+    width: 40%;
     margin-left: auto;
     position: relative;
     display: none;
@@ -256,13 +257,13 @@
     }
     .b-icon {
       @include mid-flex;
-      height: 40rem;
+      height: 24rem;
       @include max(768px) {
         height: auto;
         padding-top: 4rem;
       }
       .inner-icon {
-        width: 20rem;
+        width: 10rem;
         @include mid-flex;
         @include max(768px) {
           width: 5.6rem;
@@ -270,73 +271,10 @@
       }
     }
   }
-  //   .box-img {
-  //     position: relative;
 
-  //     @include max(768px) {
-  //       display: none;
-  //     }
-  //     .inner-bg {
-  //       position: relative;
-  //       @include max(768px) {
-  //         aspect-ratio: 5/4;
-  //       }
-  //       &::after {
-  //         content: "";
-  //         position: absolute;
-  //         @include full;
-  //         z-index: 1;
-  //         background: linear-gradient(
-  //           180deg,
-  //           rgba(242, 235, 148, 0) 76.32%,
-  //           var(--bg) 100%
-  //         );
-  //       }
-  //     }
-  //     @include min(769px) {
-  //       position: absolute;
-  //       bottom: 0;
-  //       top: 0;
-  //       right: 0;
-  //       width: 45%;
-  //       overflow: hidden;
-  //       opacity: 0;
-  //       transition: 0.5s ease-in-out;
-  //       .inner-bg {
-  //         position: absolute;
-  //         width: 100%;
-  //         bottom: 0;
-  //         left: 0;
-  //         &::before {
-  //           content: "";
-  //           position: absolute;
-  //           @include full;
-  //           z-index: 1;
-  //           background: linear-gradient(
-  //             270deg,
-  //             rgba(242, 235, 148, 0) 67.68%,
-  //             var(--bg) 100%
-  //           );
-  //         }
-  //       }
-  //     }
-
-  //     img {
-  //       display: block;
-  //       width: 100%;
-  //       object-position: bottom;
-  //     }
-
-  //     .inner-dc {
-  //       position: absolute;
-  //       bottom: 0;
-  //       left: 50%;
-  //       transform: translateX(-50%);
-  //       width: 100%;
-  //     }
-  //   }
   .box-des {
     display: none;
+    margin-top: 1.2rem;
   }
 }
 
@@ -364,7 +302,7 @@
       width: calc(100% / 1.5);
     }
     @include max(500px) {
-      width: 70%;
+      width: 75%;
     }
   }
 }
@@ -432,6 +370,9 @@
       @include font-second;
       font-weight: 700;
       line-height: 1.2;
+      @include max(500px) {
+        font-size: 2.6rem;
+      }
       @include max(400px) {
         font-size: 7vw;
       }
@@ -475,7 +416,8 @@
     border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
   }
   @include max(768px) {
-    font-family: 1.6rem;
+    font-size: 1.6rem;
+    padding: 1.2rem 0;
   }
   &.active {
     .b-head {
@@ -506,8 +448,10 @@
   }
 }
 .se-box {
-  padding-top: 4rem;
+  padding: 6rem 0;
   .stu-tags {
+    flex-wrap: unset;
+    white-space: nowrap;
     .b-tag {
       --py: 1.2rem;
     }
@@ -591,9 +535,19 @@
     display: none;
   }
 }
-
+.taf-table {
+  max-height: 41rem;
+  overflow-y: auto;
+}
+.taf-mb-body {
+  max-height: 41rem;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 .table-custom {
-  --bg-thead: #f9f9f9;
+  --bg-thead: var(--bg-table);
   --cl-thead: #15191e;
   --cl-sp: #394150;
   --rs: 1.2rem;
@@ -607,7 +561,11 @@
     box-shadow: unset;
   }
   thead {
+    position: sticky;
+    top: 0;
+    width: 100%;
     background: var(--bg-thead);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
     @include max(930px) {
       display: none;
     }
@@ -863,6 +821,9 @@
     padding-top: 4%;
   }
 }
+.rsult-panel {
+  min-height: 40rem;
+}
 .rsult-bg {
   position: absolute;
   width: 100%;
@@ -882,11 +843,10 @@
   border-radius: 1.2rem;
   position: relative;
   z-index: 2;
-  pointer-events: none;
+  cursor: pointer;
   @include max(768px) {
     padding: 1.6rem;
     max-width: 65%;
-    pointer-events: all;
   }
   &.active {
     .b-head {
@@ -911,15 +871,10 @@
       height: 2.4rem;
       @include mid-flex;
       transition: 0.3s ease-in-out;
-      @include min(769px) {
-        display: none;
-      }
     }
   }
   .b-body {
-    @include max(768px) {
-      display: none;
-    }
+    display: none;
   }
 }
 .rsult-row {
@@ -964,8 +919,8 @@
   overflow: hidden;
 }
 .int-it {
-  height: 100%;
   position: relative;
+  height: 100%;
   .b-inner {
     height: 100%;
     padding: 1.6rem;
@@ -979,6 +934,9 @@
     aspect-ratio: 562 / 320;
     border-radius: 0.4rem;
     overflow: hidden;
+    @include max(500px) {
+      aspect-ratio: 1/1;
+    }
     img {
       display: block;
       width: 100%;
@@ -994,22 +952,15 @@
       justify-content: space-between;
       gap: 1.2rem;
       cursor: pointer;
-      @include min(501px) {
-        pointer-events: none;
-      }
-      &.active {
-        .icon {
-          transform: rotate(180deg);
-        }
-      }
+
       .icon {
         @include mid-flex;
         width: 3.2rem;
         height: 3.2rem;
         flex-shrink: 0;
         transition: 0.3s ease-in-out;
-        @include min(501px) {
-          display: none;
+        &.active {
+          transform: rotate(180deg);
         }
       }
     }
@@ -1019,6 +970,7 @@
     }
     .t-des {
       @include fz-16;
+      display: none;
     }
   }
 }
@@ -1106,7 +1058,7 @@
       text-align: center;
     }
   }
-  .sys-se .txt {
+  @include max(768px) {
     text-align: center;
   }
 }
@@ -1161,11 +1113,17 @@
 .sys-phone {
   .iwt.t-link {
     --iz: 3.4rem;
+    @include max(768px) {
+      justify-content: center;
+    }
     .txt {
-      @include fz-48;
+      font-size: 4.8rem;
       @include font-second;
       color: var(--color-pri);
       line-height: 1;
+      @include max(768px) {
+        font-size: 3.2rem;
+      }
     }
     .icon {
       border-radius: 100rem;
@@ -1344,5 +1302,80 @@
   100% {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+  }
+}
+.taf-table {
+  @include max(500px) {
+    display: none;
+  }
+}
+.taf-mb {
+  padding: 0 1.6rem;
+  background: var(--bg-table-mb);
+  border-radius: 1.2rem;
+  @include min(501px) {
+    display: none;
+  }
+  &-head {
+    display: flex;
+    color: var(--color-text);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    .t-head {
+      width: calc(100% / 3);
+      padding: 1.6rem 0.4rem;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
+  &-it {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.6rem 0;
+    align-items: center;
+    &:not(:last-child) {
+      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    }
+    .t-col {
+      width: calc(100% / 3);
+      text-align: center;
+      font-size: 1.4rem;
+      .b-tag {
+        --fz: 1.4rem;
+      }
+      &:last-child {
+        width: 100%;
+      }
+      .b-tag {
+        margin: 0 auto;
+      }
+      .icon-arrow {
+        width: 2.2rem;
+        height: 2.2rem;
+        @include mid-flex;
+        transition: 0.3s ease-in-out;
+        &.active {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .b-group {
+      padding: 1.6rem;
+      background: var(--bg-table-gr);
+      border-radius: 0.8rem;
+      display: flex;
+      text-align: left;
+      gap: 0.4rem;
+      .col-mid {
+        flex: 1;
+      }
+      .iwt {
+        align-items: unset;
+      }
+    }
+    .toggle-content {
+      display: none;
+      margin-top: 1.6rem;
+    }
   }
 }

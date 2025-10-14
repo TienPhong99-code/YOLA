@@ -128,6 +128,9 @@
 .fas.fa-pull-right {
   margin-left: 0.3em;
 }
+.fa-star:before {
+  content: "\f005";
+}
 
 .fa-spin {
   animation: fa-spin 2s infinite linear;

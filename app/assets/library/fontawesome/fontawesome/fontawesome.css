@@ -371,7 +371,9 @@
 .fa-arrow-down:before {
   content: "\f063";
 }
-
+.fa-star:before {
+  content: "\f005";
+}
 .fa-calendar:before {
   content: "\f133";
 }

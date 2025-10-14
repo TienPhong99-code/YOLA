@@ -11,10 +11,10 @@ block container
             .b-sw 
                +Swiper()
                   .swiper-slide.col
-                     .bnh-item
+                     .bnh-item.has-video
                         .b-img
                            .h-full
-                              +img("bn-class.jpg")
+                              video(src="./assets/images/demo.mp4" autoplay muted loop playsinline)
                         .container 
                            .b-content(data-aos="fade-left")
                               .b-head
@@ -32,7 +32,7 @@ block container
                                           | Phát triển kỹ năng  tư duy thế kỷ 21
                               .b-btn
                                  +Btn("Đăng ký học thử miễn phí")
-                        a(href="https://www.youtube.com/watch?v=-byQgOJ1kys" data-fancybox).b-play 
+                        a(href="https://youtu.be/oAwkmleUz6g?si=ePCLyGAiW2FKKjJe" data-fancybox).b-play 
                            +img("ic-play2.svg")
       +rse()
    +cn-box()
@@ -107,42 +107,42 @@ block container
             .int-wrap 
                .int-head.t-center.mb-40
                   +title("NỘI DUNG","CHƯƠNG TRÌNH QUỐC TẾ RÈN TƯ DUY & KỸ NĂNG")
-               .int-block.collapse-block
+               .int-block
                   .int-slider.slidePc
                      .b-sw.posi-rl
                         +SwiperControl("posi midle")
                         +Swiper()
                            .swiper-slide.col.col-6 
-                              .int-it.collapse-item
+                              .int-it.arrowItem
                                  .int-inner
                                     .b-inner 
                                        .b-img
                                           +img("int-img1.jpg")
                                        .b-ctn 
-                                          .t-head.collapse-head
+                                          .t-head
                                              h3.t-text 
                                                 | KHỞI TRÍ TÒ MÒ
-                                             span.icon
+                                             span.icon.arrowIcon
                                                 i.fa-light.fa-chevron-down
-                                          .t-des.collapse-body
+                                          .t-des.arrowContent
                                              p 
                                                 | Bắt đầu cùng trò chơi hỏi–đáp, bé luyện phản xạ nghe–nói với từ vựng và câu đơn giản
                                              p  Bé tự tin giới thiệu sở thích và vui học qua tương tác tự nhiên
                                     .b-btn
                                        +Btn("Kiểm tra trình độ miễn phí","","")
                            .swiper-slide.col.col-6 
-                              .int-it.collapse-item
+                              .int-it.arrowItem
                                  .int-inner
                                     .b-inner 
                                        .b-img
                                           +img("int-img2.jpg")
                                        .b-ctn 
-                                          .t-head.collapse-head
+                                          .t-head
                                              h3.t-text 
                                                 | HỌC NGÔN NGỮ QUA ĐA MÔN & DỰ ÁN
-                                             span.icon
+                                             span.icon.arrowIcon
                                                 i.fa-light.fa-chevron-down
-                                          .t-des.collapse-body
+                                          .t-des.arrowContent
                                              P 
                                                 | Bé vừa chơi vừa học qua dự án đa lĩnh vực:
                                              P  
@@ -152,18 +152,18 @@ block container
                                     .b-btn
                                        +Btn("Kiểm tra trình độ miễn phí","","")
                            .swiper-slide.col.col-6 
-                              .int-it.collapse-item
+                              .int-it.arrowItem
                                  .int-inner
                                     .b-inner 
                                        .b-img
                                           +img("int-img3.jpg")
                                        .b-ctn 
-                                          .t-head.collapse-head
+                                          .t-head
                                              h3.t-text 
                                                 | CHIA SẺ & HOÀ NHẬP
-                                             span.icon
+                                             span.icon.arrowIcon
                                                 i.fa-light.fa-chevron-down
-                                          .t-des.collapse-body
+                                          .t-des.arrowContent
                                              P
                                                 | Bé chia sẻ ý tưởng, hợp tác với bạn và giữ lớp sạch sẽ. Hoạt động vui học này giúp bé nhanh hòa nhập, cùng bạn hợp tác cùng nhau vui chơi.
                                     .b-btn
@@ -175,83 +175,8 @@ block container
                      +img("ic-star.svg")
                   p
                      | Trong mỗi buổi học, giáo viên sẽ dùng sticker để khen thưởng nhằm tạo động lực và khuyến khích các em mạnh dạn hơn
-   section.sec-taf.ss-pd-b 
-      .container 
-         .taf 
-            .taf-wrap 
-               .taf-head.t-center.mb-40
-                  +title("LỊCH KHÓA HỌC","CHO BÉ 3 TUỔI")
-               .taf-block 
-                  .taf-table
-                     table.table-custom
-                        thead
-                           tr 
-                              th
-                                 | CHI NHÁNH
-                              th
-                                 | KHAI GIẢNG
-                              th
-                                 | SỐ LƯỢNG HV
-                              th
-                                 | ĐỊA CHỈ
-                              th 
-                                 | BUỔI HỌC
-                              th 
-                                 | GIỜ HỌC
-                        tbody 
-                           each i,index in Array(7)
-                              tr 
-                                 td(data-text="CHI NHÁNH:") Đỗ Xuân Hợp
-                                 td(data-text="KHAI GIẢNG:") 
-                                    | 26/08/2025
-                                 td(data-text="Số LƯỢNG HV:") 
-                                    span.b-tag.b-live Còn chỗ
-                                 td(data-text="ĐỊA CHỈ:")  
-                                    span 299B Đỗ Xuân Hợp, Phường Phước Long B, TP. Thủ Đức, TP. Hồ Chí Minh
-                                 td(data-text="BUỔI HỌC:") 
-                                    span Thứ 3/5/7
-                                 td(data-text="GIỜ HỌC:") 
-                                    span 19:30 - 21:30
-   section.sec-dkf.ss-pd-b
-      .container 
-         .dkf 
-            .dkf-wrap 
-               .dkf-row.row 
-                  .col.col-6
-                     .dkf-panel 
-                        .t-head 
-                           +title("","XÂY DỰNG LỊCH HỌC CHO BÉ")
-                        .t-des 
-                           p 
-                              | Bạn không tìm thấy lịch phù hợp với bạn ?
-                           p 
-                              | Hãy chọn ngay cho chính bạn 1 lịch phù hợp
-                  .col.col-6
-                     .dkf-form 
-                        form(action="")
-                           .form-list.row 
-                              .col.form-ip 
-                                 input(type="text" placeholder="Tên của bạn")
-                              .col.form-ip 
-                                 input(type="text" placeholder="Số điện thoại")
-                              .col.form-ip 
-                                 .b-select 
-                                    select(name="" data-placeholder="Chọn trình độ").re-select-main
-                                       option(value="")
-                                       option(value="") Demo
-                                       option(value="") Demo
-                              .col.form-ip 
-                                 .b-select 
-                                    select(name="" data-placeholder="Chọn địa điểm").re-select-main
-                                       option(value="")
-                                       option(value="") Demo
-                                       option(value="") Demo
-                              .col.form-ip 
-                                 input(type="text" placeholder="Nhập ca học (VD: 08:00 - 07:00)")
-                              .col.form-ip 
-                                 input(type="text" placeholder="Nhập buổi học (VD: thứ 2-4-6")
-                           .b-submit 
-                              +Btn("Gửi yêu cầu","button","full")
+   +table("LỊCH KHÓA HỌC","CHO BÉ 3 TUỔI")
+   +form-dk("XÂY DỰNG LỊCH HỌC CHO BÉ")
    +card-sv()
    +faq()
    +form()

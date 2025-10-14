@@ -1107,3 +1107,29 @@ input[type="number"] {
     background: var(--color-pri);
   }
 }
+.star {
+  @include flex;
+  align-items: center;
+
+  &-flex {
+    gap: 0.3rem;
+  }
+
+  .star-list {
+    height: unset;
+  }
+
+  .star-empty {
+    i {
+      color: #dedede;
+      font-size: 1.4rem;
+    }
+  }
+
+  .star-filter {
+    i {
+      color: #ffc107;
+      font-size: 1.4rem;
+    }
+  }
+}

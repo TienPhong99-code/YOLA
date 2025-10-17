@@ -73,6 +73,9 @@
     color: var(--color-text);
     line-height: 1.2;
     font-weight: 700;
+    @include max(500px) {
+      font-size: 3.2rem;
+    }
   }
   .b-img {
     display: block;
@@ -111,12 +114,37 @@
 .news-dt-content {
   word-break: break-word;
 }
+.sec-news-dt {
+  @include max(1200px) {
+    overflow: hidden;
+  }
+}
 .news-dt-side {
   position: sticky;
   top: var(--size-hd);
+
+  @include max(1200px) {
+    padding: 4rem 0;
+    position: relative;
+    top: unset;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      height: 100%;
+      background: rgb(249, 250, 251);
+      z-index: -1;
+    }
+  }
   .t-head {
     @include fz-24;
     margin-bottom: 1.2rem;
+    @include max(1200px) {
+      font-size: 2.4rem;
+    }
   }
 }
 .news-dt-row {

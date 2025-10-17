@@ -7,6 +7,9 @@
   text-align: center;
   width: 36rem;
   gap: 1.2rem;
+  @include max(500px) {
+    gap: 0.8rem;
+  }
   &.left {
     position: absolute;
     right: 90%;
@@ -31,6 +34,9 @@
     @include max(500px) {
       font-size: 2.4rem;
     }
+    @include max(400px) {
+      font-size: 6vw;
+    }
   }
   .t-link {
     width: 3.2rem;
@@ -45,7 +51,10 @@
     }
   }
   .t-des {
-    @include max(400px) {
+    @include max(500px) {
+      font-size: 1.4rem;
+    }
+    @include max(390px) {
       font-size: 1.3rem;
     }
   }
@@ -139,6 +148,9 @@
     @include max(500px) {
       font-size: 3.8rem;
     }
+    @include max(400px) {
+      font-size: 9vw;
+    }
   }
 }
 .abb-wrap {
@@ -222,7 +234,7 @@
 .hnor-head {
   .head {
     @include max(500px) {
-      width: 34rem;
+      width: 30rem;
       margin: 0 auto;
     }
   }
@@ -279,7 +291,7 @@
   width: 16%;
   z-index: -1;
   @include max(500px) {
-    top: 10%;
+    top: 30%;
     bottom: unset;
     width: 50%;
   }
@@ -289,8 +301,10 @@
   }
 }
 .abv-list {
-  --cg: 2.4rem;
-  --rg: 4rem;
+  @include min(501px) {
+    --cg: 2.4rem;
+    --rg: 4rem;
+  }
   > .col {
     @include max(768px) {
       width: 50%;
@@ -298,6 +312,9 @@
     @include max(500px) {
       width: 100%;
     }
+  }
+  @include max(500px) {
+    margin: 0;
   }
 }
 .abv-head {

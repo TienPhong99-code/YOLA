@@ -65,8 +65,16 @@
       padding: 0 1.6rem;
       font-size: var(--fz-ip);
       background: var(--bg-ip);
+      @include font-pri();
       &::placeholder {
         color: var(--color-placeholder);
+        font-weight: 300;
+      }
+      &.wpcf7-validates-as-required {
+        &::placeholder {
+          color: var(--color-placeholder);
+          font-weight: 700;
+        }
       }
       &:focus {
         border-color: var(--cl-focus);
@@ -84,8 +92,10 @@
       color: var(--color-text);
       transition: 0.3s ease-in-out;
       resize: unset;
+      @include font-pri();
       &::placeholder {
         color: var(--color-placeholder);
+        font-weight: 300;
       }
       &:focus {
         border-color: var(--cl-focus);

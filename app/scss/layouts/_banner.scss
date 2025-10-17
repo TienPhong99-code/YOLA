@@ -1,6 +1,11 @@
 @use "../core/mixin" as *;
 @use "../core/font" as *;
-
+.page-home,
+.page-about {
+  .bnh-item .btn {
+    background: var(--color-pri);
+  }
+}
 .bnh {
   position: relative;
   &-item {
@@ -83,7 +88,7 @@
         font-weight: 700;
         line-height: 1.2;
         @include max(414px) {
-          font-size: 10vw;
+          font-size: 9vw;
         }
         br {
           @include max(500px) {
@@ -97,7 +102,12 @@
     }
     .b-des {
       font-size: 1.8rem;
-      max-width: 35rem;
+      // max-width: 35rem;
+      @include max(500px) {
+        br {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -289,9 +299,7 @@
       );
       bottom: 40%;
     }
-    @include max(768px) {
-      text-align: center;
-    }
+
     .b-des {
       max-width: 100%;
     }

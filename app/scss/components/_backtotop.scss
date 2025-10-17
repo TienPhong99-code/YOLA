@@ -57,3 +57,23 @@
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
 }
+.social-fixed {
+  position: fixed;
+  bottom: 6rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 100;
+  .i-link {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100rem;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    @include hover {
+      transform: scale(0.95);
+    }
+  }
+}

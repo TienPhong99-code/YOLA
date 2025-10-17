@@ -5,7 +5,7 @@ block vars
     -bodyClass = 'page-about'
 
 block container
-   .bnh.bn-ab
+   .bnh 
       .bnh-wrap 
          .bnh-slider 
             .b-sw 
@@ -15,14 +15,17 @@ block container
                         .container 
                            .b-content(data-aos="fade-left")
                               .b-head
-                                 span.c-white.t20 YOLA KHÔNG CHỈ LÀ TRUNG TÂM ANH NGỮ TIẾNG ANH
                                  .t-text 
-                                    | MÀ LÀ NƠI KHAI PHÓNG
-                                    br
-                                    | TIỀM NĂNG QUA NGÔN NGỮ
+                                    | KHAI PHÓNG TIỀM NĂNG
+                                 span.txt Dẫn lối Nhân - Tài
+                              .b-des 
+                                 p 
+                                    | YOLA trao nền tảng tiếng Anh học thuật vững chắc & nuôi dưỡng khát khao tri thức cho mọi hoài bão lớn
                         .b-img
-                           .h-full
-                              +img("bn-ab.jpg")
+                           .is-pc.h-full
+                              +img("bnh-img (1).jpg")
+                           .is-mb.h-full
+                              +img("bnh-img-mb (1).jpg")
       +rse()
    +cn-box()
    section.sec-abi.ss-pd-t
@@ -38,19 +41,19 @@ block container
                            span.t-name PHẠM ANH KHOA
                            .t-des
                               p
-                                 | Đồng sáng lập chủ tịch 
+                                 | Đồng sáng lập 
                                  br
-                                 | hội đồng quản trị
-                           a.t-link(href="#")
+                                 | chủ tịch hội đồng quản trị
+                           .t-link.popup-open(data-popup="popup-core1-id" )
                               i.fa-light.fa-plus
                         .abi-per.right
                            span.t-name NGÔ THUỲ NGỌC TÚ
                            .t-des
                               p
-                                 | Đồng sáng lập chủ tịch 
+                                 | Đồng sáng lập
                                  br
-                                 | hội đồng quản trị
-                           a.t-link(href="#")
+                                 | chủ tịch hội đồng quản trị
+                           .t-link.popup-open(data-popup="popup-core2-id" )
                               i.fa-light.fa-plus
                      .abi-pos 
                         .abi-img.left 
@@ -95,7 +98,7 @@ block container
                                        .t-des 
                                           p 
                                              | Đơn vị đồng tài trợ chương trình Tuổi Hồng 27
-   section.sec-abv.ss-pd-b
+   section.sec-abv.ss-pd-b.sec-snum
       .abv-dcor 
          +img("abv-bg.png")
       .container 
@@ -103,14 +106,14 @@ block container
             .abv-wrap 
                .abv-head.t-center.mb-40
                   +title("16 NĂM 1 KHÁT VỌNG","THAY ĐỔI CUỘC SỐNG HỌC SINH VIỆT")
-               .abv-block 
-                  .abv-list.row 
-                     .col.col-4
-                        .abv-it 
+               .abv-block.rolodex
+                  .abv-list.row.rolodex-stage
+                     .col.col-4.rolodex-item
+                        .abv-it.snum-item
                            .t-head 
                               span.t-num 2000+
-                              span.txt Tỷ đồng
-                           .t-body 
+                              span.text Tỷ đồng
+                           .t-ctn 
                               .t-des 
                                  p 
                                     | Tổng giá trị học bổng được trao từ top 100 
@@ -123,48 +126,48 @@ block container
                                     +img("snum-ic (2).svg")
                                  .icon 
                                     +img("snum-ic (3).svg")
-                     .col.col-4
-                        .abv-it 
+                     .col.col-4.rolodex-item
+                        .abv-it.snum-item
                            .t-head 
                               span.t-num Hơn 90%
-                              span.txt học viên
-                           .t-body 
+                              span.text học viên
+                           .t-ctn 
                               .t-des 
                                  p 
                                     | Đạt điểm thi Cambride kỳ vọng
-                     .col.col-4
-                        .abv-it 
+                     .col.col-4.rolodex-item
+                        .abv-it.snum-item
                            .t-head 
                               span.t-num 68.000+
-                              span.txt học viên
-                           .t-body 
+                              span.text học viên
+                           .t-ctn 
                               .t-des 
                                  p 
                                     | Đạt điểm đầu vào trường đại học Mỹ, Anh, Úc
-                     .col.col-4
-                        .abv-it 
+                     .col.col-4.rolodex-item
+                        .abv-it.snum-item
                            .t-head 
                               span.t-num 1600+
-                              span.txt học viên
-                           .t-body 
+                              span.text học viên
+                           .t-ctn 
                               .t-des 
                                  p 
                                     | Đạt IELTS 6.0+
-                     .col.col-4
-                        .abv-it 
+                     .col.col-4.rolodex-item
+                        .abv-it.snum-item
                            .t-head 
                               span.t-num 11.600
-                              span.txt học viên
-                           .t-body 
+                              span.text học viên
+                           .t-ctn 
                               .t-des 
                                  p 
                                     | IELTS 6.5+
-                     .col.col-4
-                        .abv-it 
+                     .col.col-4.rolodex-item
+                        .abv-it.snum-item
                            .t-head 
                               span.t-num 5.878
-                              span.txt học viên
-                           .t-body 
+                              span.text học viên
+                           .t-ctn 
                               .t-des 
                                  p 
                                     | đạt IELTS 7.0+

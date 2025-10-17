@@ -90,7 +90,7 @@
     padding-top: 8rem;
   }
 }
-.snum-wrap {
+.snum-head {
   @include max(500px) {
     max-width: 30rem;
     margin: 0 auto;
@@ -111,6 +111,17 @@
   -webkit-font-smoothing: antialiased;
   opacity: 0.5;
   transition: 0.3s ease-in-out;
+  &.abv-it {
+    @include min(501px) {
+      padding: 0;
+      opacity: 1;
+      text-align: left;
+      align-items: flex-start;
+      .t-ctn {
+        max-width: 100%;
+      }
+    }
+  }
   .t-num {
     font-size: 6rem;
     @include font-second;
@@ -149,12 +160,21 @@
   .container {
     height: auto;
   }
+  &.sec-abv {
+    &::before {
+      display: none;
+    }
+    @include min(501px) {
+      padding-top: 0;
+    }
+  }
 }
 .snum-block {
-  max-width: 82rem;
+  width: 82rem;
   margin: 0 auto;
+  max-width: 100%;
 }
-.snum-panel {
+.rolodex {
   perspective: 1200px;
   overflow: visible;
 }
@@ -165,6 +185,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  &.abv-list {
+    @include min(501px) {
+      flex-direction: row;
+    }
+  }
 }
 .rolodex-item {
   position: absolute;
@@ -181,6 +206,12 @@
       opacity: 1;
     }
   }
+  &.col {
+    @include min(501px) {
+      position: static;
+      width: calc(100% / 3);
+    }
+  }
 }
 
 // .rolodex-item[data-depth="back"] {
@@ -194,11 +225,9 @@
 }
 .snum-img {
   width: 40rem;
-  max-width: 100%;
   margin: 0 auto;
   position: relative;
   top: -10rem;
-  transform-style: preserve-3d;
   @include max(600px) {
     width: 65%;
   }
@@ -356,12 +385,13 @@
       text-align: center;
       color: var(--color-white);
       padding: 1.2rem;
+      font-size: 1.4rem;
       @include max(500px) {
         height: 40%;
       }
       .t-text {
         @include font-second;
-        font-size: 6.4rem;
+        font-size: 5.2rem;
         font-weight: 700;
         line-height: 1.2;
         @include max(768px) {
@@ -376,10 +406,7 @@
           width: 4rem;
           height: 0.1rem;
           background: #fff;
-          margin: 2.4rem auto;
-          @include max(500px) {
-            margin: 1.2rem auto;
-          }
+          margin: 1.2rem auto;
         }
       }
       .t-des {
@@ -394,6 +421,8 @@
         --fw: 700;
         --cl: var(--color-white);
         --rs: 0.8rem;
+        --fz: 1.4rem;
+        --py: 0.4rem 0.8rem;
         @include max(500px) {
           font-size: 1rem;
           --rs: 0.4rem;
@@ -416,6 +445,9 @@
 }
 .sec-course {
   overflow: hidden;
+  @include max(500px) {
+    margin-top: -4rem;
+  }
 }
 .course-slider {
   .swiper {
@@ -424,6 +456,7 @@
       overflow: visible;
     }
     &-slide {
+      width: 28%;
       @include max(1024px) {
         width: 50%;
       }
@@ -497,7 +530,7 @@
     .t-name {
       @include font-second;
       font-weight: 700;
-      @include fz-40;
+      font-size: 3rem;
       @include max(768px) {
         font-size: 4.8rem;
       }
@@ -545,7 +578,7 @@
     color: var(--color-white);
     font-size: 1.6rem;
     padding: 0 5%;
-    z-index: 1;
+    z-index: 10;
     .ic-logo {
       height: 4.8rem;
       max-width: 100%;
@@ -588,11 +621,7 @@
     }
   }
 }
-.fm-slider {
-  @include max(1200px) {
-    padding: 0 1.5rem;
-  }
-}
+
 .smem-slider {
   .swiper {
     overflow: visible;
@@ -600,6 +629,7 @@
       overflow: visible;
     }
     &-slide {
+      width: 28%;
       @include max(1024px) {
         width: 50%;
       }
@@ -801,6 +831,9 @@
     .t-name {
       font-weight: 700;
       font-size: 1.6rem;
+      @include max(500px) {
+        font-size: 1.4rem;
+      }
     }
     .text {
       @include max(500px) {
@@ -931,7 +964,10 @@
       overflow: visible;
     }
     &-slide {
-      width: calc(100% / 3);
+      width: 28%;
+      @include max(1200px) {
+        width: calc(100% / 3);
+      }
       @include max(500px) {
         width: 70%;
       }
@@ -978,6 +1014,7 @@
     @include mid-flex;
     border-radius: 100rem;
     background: var(--color-white);
+    pointer-events: none;
     img {
       width: 2.4rem;
     }

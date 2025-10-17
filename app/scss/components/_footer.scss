@@ -43,7 +43,6 @@
 .ft-bct {
   max-width: 18rem;
   @include max(768px) {
-    margin-left: auto;
     max-width: 14rem;
   }
 }
@@ -78,10 +77,7 @@
     gap: 0.8rem;
 
     .icon {
-      width: 2rem;
-      height: 2rem;
-      @include mid-flex;
-      flex-shrink: 0;
+      display: none;
     }
     .txt {
       font-size: 2rem;
@@ -108,7 +104,7 @@
   .menu {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 1.2rem;
     li {
       a {
         @include fz-16;
@@ -119,17 +115,6 @@
         transition: 0.3s ease-in-out;
         @include hover {
           color: var(--color-pri);
-        }
-        &::before {
-          content: "";
-          display: inline-block;
-          width: 2rem;
-          height: 2rem;
-          background-image: url(../assets/images/ic-arrow.svg);
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          flex-shrink: 0;
         }
       }
     }
